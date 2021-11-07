@@ -8,4 +8,5 @@ class AppColor {
   AppColor._();
 
   static Color pinkcolor = const Color(0xffF85D76);
+  static Color textfieldColor = const Color(0xffCECECE);
 }

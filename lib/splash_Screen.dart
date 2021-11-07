@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:saloon/Login/login_page.dart';
 import 'package:saloon/globals/UI_widgets.dart';
 import 'package:saloon/globals/colors.dart';
 
@@ -32,19 +33,25 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               Text(
                 "All Salons Just a Click Away",
-                style: textStyle(24.sp, Colors.white),
+                style: textStyle(24.sp, Colors.white, "myriad"),
               ),
               SizedBox(
                 height: 90.h,
               ),
-              Container(
-                height: 40.h,
-                width: 188.w,
-                color: AppColor.pinkcolor,
-                child: Center(
-                  child: Text(
-                    "USER",
-                    style: textStyle(20.sp, Colors.white),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+                child: Container(
+                  height: 40.h,
+                  width: 188.w,
+                  color: AppColor.pinkcolor,
+                  child: Center(
+                    child: Text(
+                      "USER",
+                      style: textStyle(20.sp, Colors.white, "poppin"),
+                    ),
                   ),
                 ),
               ),
@@ -58,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Center(
                   child: Text(
                     "SALON",
-                    style: textStyle(20.sp, Colors.white),
+                    style: textStyle(20.sp, Colors.white, "poppin"),
                   ),
                 ),
               )

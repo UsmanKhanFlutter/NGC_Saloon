@@ -29,3 +29,43 @@ Widget textfield(String hintText, IconData icon, Color iconcolor) {
             hintStyle: textStyle(13.sp, Colors.white, "myriad")),
       ));
 }
+
+Widget appBar() {
+  return Container(
+    height: 100.h,
+    width: double.infinity,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Image.asset("assets/images/drawericon.png"),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Image.asset("assets/images/appbarlogo.png"),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 5),
+          child: Container(
+              child: Row(
+            children: [
+              Image.asset("assets/images/global.png"),
+              SizedBox(
+                width: 1.sp,
+              ),
+              Text(
+                "ENG",
+                style: textStyle(9.sp, Colors.black, "poppin"),
+              ),
+              Icon(
+                Icons.arrow_drop_down,
+                color: Colors.black,
+              )
+            ],
+          )),
+        )
+      ],
+    ),
+  );
+}

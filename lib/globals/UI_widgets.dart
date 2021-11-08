@@ -32,18 +32,21 @@ Widget textfield(String hintText, IconData icon, Color iconcolor) {
 
 Widget appBar() {
   return Container(
-    height: 100.h,
+    height: 60.h,
     width: double.infinity,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 10),
+          padding: const EdgeInsets.only(left: 12),
           child: Image.asset("assets/images/drawericon.png"),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: Image.asset("assets/images/appbarlogo.png"),
+          padding: const EdgeInsets.only(top: 10, left: 12),
+          child: Image.asset(
+            "assets/images/saloonlogo.png",
+            height: 60.h,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 5),
@@ -52,7 +55,7 @@ Widget appBar() {
             children: [
               Image.asset("assets/images/global.png"),
               SizedBox(
-                width: 1.sp,
+                width: 2.sp,
               ),
               Text(
                 "ENG",

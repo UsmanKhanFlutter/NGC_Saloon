@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: ThemeData(
+              splashColor: Colors
+                  .transparent, //the highlight effect when clicked is set to transparent
+              highlightColor: Colors.transparent,
               // This is the theme of your application.
               //
               // Try running your application with "flutter run". You'll see the

@@ -72,3 +72,30 @@ Widget appBar() {
     ),
   );
 }
+
+Widget topContainer(String title) {
+  return Container(
+      width: double.infinity,
+      height: 16.h,
+      color: AppColor.pinkcolor,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 10.w,
+          ),
+          Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.white,
+            size: 9.h,
+          ),
+          SizedBox(
+            width: 5.w,
+          ),
+          Text(
+            title,
+            style: textStyle(9.h, Colors.white, "poppin"),
+          )
+        ],
+      ));
+}

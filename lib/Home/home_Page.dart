@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saloon/Home/aboutStudion.dart';
 import 'package:saloon/globals/UI_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:saloon/globals/colors.dart';
@@ -131,19 +132,22 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 20.h,
           ),
-          salonContainer(),
+          salonContainer(() {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AboutStudio()));
+          }),
           SizedBox(
             height: 10.h,
           ),
-          salonContainer(),
+          salonContainer(() {}),
           SizedBox(
             height: 10.h,
           ),
-          salonContainer(),
+          salonContainer(() {}),
           SizedBox(
             height: 10.h,
           ),
-          salonContainer(),
+          salonContainer(() {}),
         ],
       ),
     ));
@@ -175,110 +179,113 @@ Widget categoriesContainer(String image, String title, VoidCallback onpressed,
   );
 }
 
-Widget salonContainer() {
-  return Container(
-      height: 96.h,
-      width: 366.w,
-      decoration: BoxDecoration(
-          color: Color(0xffFFF8F1), borderRadius: BorderRadius.circular(2.r)),
-      child: Row(
-        children: [
-          Container(
-            height: 95.h,
-            width: 107.w,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/salonPic.png"))),
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 4),
-                child: Text(
-                  "GlamStudio",
-                  style: textStyle(13.sp, Colors.black, "poppin"),
+Widget salonContainer(VoidCallback onpressed) {
+  return InkWell(
+    onTap: onpressed,
+    child: Container(
+        height: 96.h,
+        width: 366.w,
+        decoration: BoxDecoration(
+            color: Color(0xffFFF8F1), borderRadius: BorderRadius.circular(2.r)),
+        child: Row(
+          children: [
+            Container(
+              height: 95.h,
+              width: 107.w,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/salonPic.png"))),
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 4),
+                  child: Text(
+                    "GlamStudio",
+                    style: textStyle(13.sp, Colors.black, "poppin"),
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.location_on,
-                    color: AppColor.orangColor,
-                    size: 13.h,
-                  ),
-                  SizedBox(
-                    width: 3.h,
-                  ),
-                  Text(
-                    "Near Zarghuni Masjid, Phase 2 Hayatabad Peshawar",
-                    style: textStyle(6.sp, Colors.black, "poppin"),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 3.h,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.timer,
-                    color: AppColor.orangColor,
-                    size: 13.h,
-                  ),
-                  SizedBox(
-                    width: 3.h,
-                  ),
-                  Text(
-                    "11:OO AM - 07:00 PM",
-                    style: textStyle(6.sp, Colors.black, "poppin"),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 3.h,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.phone,
-                    color: AppColor.orangColor,
-                    size: 13.h,
-                  ),
-                  SizedBox(
-                    width: 3.h,
-                  ),
-                  Text(
-                    "+92 4375 7824",
-                    style: textStyle(6.sp, Colors.black, "poppin"),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 3.h,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.thumb_up,
-                    color: AppColor.orangColor,
-                    size: 13.h,
-                  ),
-                  SizedBox(
-                    width: 3.h,
-                  ),
-                  Text(
-                    "3.9",
-                    style: textStyle(6.sp, Colors.black, "poppin"),
-                  )
-                ],
-              )
-            ],
-          )
-        ],
-      ));
+                Row(
+                  children: [
+                    Icon(
+                      Icons.location_on,
+                      color: AppColor.orangColor,
+                      size: 13.h,
+                    ),
+                    SizedBox(
+                      width: 3.h,
+                    ),
+                    Text(
+                      "Near Zarghuni Masjid, Phase 2 Hayatabad Peshawar",
+                      style: textStyle(6.sp, Colors.black, "poppin"),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 3.h,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.timer,
+                      color: AppColor.orangColor,
+                      size: 13.h,
+                    ),
+                    SizedBox(
+                      width: 3.h,
+                    ),
+                    Text(
+                      "11:OO AM - 07:00 PM",
+                      style: textStyle(6.sp, Colors.black, "poppin"),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 3.h,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      color: AppColor.orangColor,
+                      size: 13.h,
+                    ),
+                    SizedBox(
+                      width: 3.h,
+                    ),
+                    Text(
+                      "+92 4375 7824",
+                      style: textStyle(6.sp, Colors.black, "poppin"),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 3.h,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.thumb_up,
+                      color: AppColor.orangColor,
+                      size: 13.h,
+                    ),
+                    SizedBox(
+                      width: 3.h,
+                    ),
+                    Text(
+                      "3.9",
+                      style: textStyle(6.sp, Colors.black, "poppin"),
+                    )
+                  ],
+                )
+              ],
+            )
+          ],
+        )),
+  );
 }

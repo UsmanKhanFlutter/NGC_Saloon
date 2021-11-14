@@ -99,11 +99,7 @@ class _AboutStudioState extends State<AboutStudio> {
                 ],
               ),
             ),
-            Expanded(
-            // child: bodyContent[selectedindex]
-            )
-
-            
+            Expanded(child: bodyContent[selectedindex])
           ],
         ),
       ),

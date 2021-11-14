@@ -351,6 +351,207 @@ Widget services() {
     height: double.infinity,
     width: double.infinity,
     color: Color(0xffFFF2F4),
+    child: Center(
+      child: Column(children: [
+        Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 5, left: 10),
+            child: Text(
+              "Glam Studio - Services",
+              style: textStyle(13.sp, Colors.black, "poppinbold"),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Container(
+          height: 236.h,
+          width: 344.w,
+          color: Colors.white,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 10.h,
+              ),
+              Image.asset(
+                "assets/images/skincare.png",
+                height: 110.h,
+              ),
+              Text(
+                "Skincare",
+                style: textStyle(16.sp, AppColor.pinkcolor, "poppinbold"),
+              ),
+              Container(
+                height: 39.h,
+                width: 280.w,
+                child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m agna aliqua. Ut enim ad minim veniam, quis",
+                  style: textStyle(9.sp, Colors.black, "poppin"),
+                ),
+              ),
+              SizedBox(height: 15.h),
+              Container(
+                height: 22.h,
+                width: 112.w,
+                color: AppColor.orangColor,
+                child: Center(
+                  child: Text(
+                    "Book Appointment",
+                    style: textStyle(9.sp, Colors.white, "poppinbold"),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 15.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              height: 144.h,
+              width: 94.w,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/images/servicemakeup.png"),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Text(
+                    "Makeup",
+                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Container(
+                    height: 15.h,
+                    width: 42.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2.r),
+                        color: AppColor.orangColor),
+                    child: Center(
+                      child: Text(
+                        "View",
+                        style: textStyle(9.sp, Colors.white, "poppinbold"),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 144.h,
+              width: 94.w,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/images/hair.png"),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Text(
+                    "Hair Affair",
+                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Container(
+                    height: 15.h,
+                    width: 42.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2.r),
+                        color: AppColor.orangColor),
+                    child: Center(
+                      child: Text(
+                        "View",
+                        style: textStyle(9.sp, Colors.white, "poppinbold"),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 144.h,
+              width: 94.w,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/images/pedicare.png"),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Text(
+                    "Mani/Pedi",
+                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Container(
+                    height: 15.h,
+                    width: 42.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2.r),
+                        color: AppColor.orangColor),
+                    child: Center(
+                      child: Text(
+                        "View",
+                        style: textStyle(9.sp, Colors.white, "poppinbold"),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 144.h,
+              width: 94.w,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/images/tattoo.png"),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Text(
+                    "Lash/Tattoo",
+                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Container(
+                    height: 15.h,
+                    width: 42.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2.r),
+                        color: AppColor.orangColor),
+                    child: Center(
+                      child: Text(
+                        "View",
+                        style: textStyle(9.sp, Colors.white, "poppinbold"),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        )
+      ]),
+    ),
   );
 }
 

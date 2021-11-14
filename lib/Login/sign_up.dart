@@ -21,7 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/images/SplashScreen.png"),
                 fit: BoxFit.fill)),
@@ -58,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BottomNavBar()));
+                            builder: (context) => const BottomNavBar()));
                   },
                   child: Container(
                     height: 44.h,
@@ -75,7 +75,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 SizedBox(height: 8.h),
-                Container(
+                SizedBox(
                   width: 276.w,
                   child: Row(
                     children: [
@@ -117,7 +117,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Container(
                       height: 42.h,
                       width: 47.w,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               image: AssetImage("assets/images/google.png"),
@@ -126,7 +126,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Container(
                       height: 42.h,
                       width: 47.w,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               image: AssetImage("assets/images/facebook.png"),
@@ -135,7 +135,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Container(
                       height: 42.h,
                       width: 47.w,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               image: AssetImage("assets/images/insta.png"),

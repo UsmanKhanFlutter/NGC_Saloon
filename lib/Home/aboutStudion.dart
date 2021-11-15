@@ -99,7 +99,10 @@ class _AboutStudioState extends State<AboutStudio> {
                 ],
               ),
             ),
-            Expanded(child: bodyContent[selectedindex])
+            Expanded(
+              child: faqs(),
+            ),
+            // child: bodyContent[selectedindex]
           ],
         ),
       ),
@@ -557,16 +560,260 @@ Widget services() {
 
 Widget review() {
   return Container(
-    height: 100,
-    width: 200,
-    color: Colors.pink,
+    height: double.infinity,
+    width: double.infinity,
+    child: Center(
+        child: Column(children: [
+      Align(
+        alignment: Alignment.topLeft,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 5, left: 10),
+          child: Text(
+            "Glam Studio - Reviews",
+            style: textStyle(13.sp, Colors.black, "poppinbold"),
+          ),
+        ),
+      ),
+      SizedBox(
+        height: 10.h,
+      ),
+      Container(
+        width: 255.w,
+        height: 28.h,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.r), color: Colors.grey[200]),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 12),
+          child: Row(
+            children: [
+              Icon(
+                Icons.star,
+                color: Colors.yellow[600],
+              ),
+              Icon(
+                Icons.star,
+                color: Colors.yellow[600],
+              ),
+              Icon(
+                Icons.star,
+                color: Colors.yellow[600],
+              ),
+              Icon(
+                Icons.star,
+                color: Colors.yellow[600],
+              ),
+              Icon(
+                Icons.star,
+                color: Colors.yellow[600],
+              ),
+              SizedBox(
+                width: 20.w,
+              ),
+              Text("4.7 out of 5",
+                  style: textStyle(12.sp, Colors.black, "poppin"))
+            ],
+          ),
+        ),
+      ),
+      Text(
+        "379 Customers Ratings and Reviews",
+        style: textStyle(11.sp, Colors.black, "poppin"),
+      ),
+      SizedBox(height: 10.h),
+      customerReviewChart("5 Stars", "84%", 180),
+      SizedBox(height: 5.h),
+      customerReviewChart("4 Stars", "19%", 120),
+      SizedBox(height: 5.h),
+      customerReviewChart("3 Stars", "18%", 100),
+      SizedBox(height: 5.h),
+      customerReviewChart("2 Stars", "15%", 90),
+      SizedBox(
+        height: 60.h,
+      ),
+      Container(
+        height: 90.h,
+        width: 358.w,
+        child: Column(
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                "Best Services",
+                style: textStyle(14.sp, Colors.black, "poppinbold"),
+              ),
+              Text("15 April,2021",
+                  style: textStyle(14.sp, Colors.black, "poppinbold"))
+            ]),
+            Container(
+                height: 50.h,
+                width: 358.w,
+                child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed o od tempor incididunt ut labore et dolore magna aliqua. Ut eni nim veniam, quis nostrud exercitation ullamco labos nisi ut ax ea commodo consequat. Duis aute irure dolor in rprerit in vol",
+                  style: textStyle(10.sp, Colors.black54, "poppin"),
+                )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text("-Ali Khan",
+                    style: textStyle(10.sp, Colors.black, "poppinbold"))
+              ],
+            )
+          ],
+        ),
+      ),
+      SizedBox(
+        height: 30.h,
+      ),
+      Container(
+        height: 90.h,
+        width: 358.w,
+        child: Column(
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                "Best Services",
+                style: textStyle(14.sp, Colors.black, "poppinbold"),
+              ),
+              Text("15 April,2021",
+                  style: textStyle(14.sp, Colors.black, "poppinbold"))
+            ]),
+            Container(
+                height: 50.h,
+                width: 358.w,
+                child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed o od tempor incididunt ut labore et dolore magna aliqua. Ut eni nim veniam, quis nostrud exercitation ullamco labos nisi ut ax ea commodo consequat. Duis aute irure dolor in rprerit in vol",
+                  style: textStyle(10.sp, Colors.black54, "poppin"),
+                )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text("-Ali Khan",
+                    style: textStyle(10.sp, Colors.black, "poppinbold"))
+              ],
+            )
+          ],
+        ),
+      ),
+      SizedBox(
+        height: 30.h,
+      ),
+      Container(
+        height: 90.h,
+        width: 358.w,
+        child: Column(
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                "Best Services",
+                style: textStyle(14.sp, Colors.black, "poppinbold"),
+              ),
+              Text("15 April,2021",
+                  style: textStyle(14.sp, Colors.black, "poppinbold"))
+            ]),
+            Container(
+                height: 50.h,
+                width: 358.w,
+                child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed o od tempor incididunt ut labore et dolore magna aliqua. Ut eni nim veniam, quis nostrud exercitation ullamco labos nisi ut ax ea commodo consequat. Duis aute irure dolor in rprerit in vol",
+                  style: textStyle(10.sp, Colors.black54, "poppin"),
+                )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text("-Ali Khan",
+                    style: textStyle(10.sp, Colors.black, "poppinbold"))
+              ],
+            )
+          ],
+        ),
+      ),
+      SizedBox(
+        height: 20.h,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            children: [
+              Container(
+                height: 30.h,
+                width: 30.w,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.black,
+                ),
+                child: Icon(
+                  Icons.arrow_drop_down,
+                  color: Colors.white,
+                ),
+              ),
+              Text("Load More",
+                  style: textStyle(12.sp, Colors.black, "poppinbold"))
+            ],
+          )
+        ],
+      )
+    ])),
   );
 }
 
 Widget faqs() {
   return Container(
-    height: 100,
-    width: 200,
-    color: Colors.black,
+    height: double.infinity,
+    width: double.infinity,
+    child: Center(
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 5, left: 10),
+              child: Text(
+                "Glam Studio - FAQs",
+                style: textStyle(13.sp, Colors.black, "poppinbold"),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
   );
+}
+
+Widget customerReviewChart(String number, String percnt, int width) {
+  return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+    Text(
+      number,
+      style: textStyle(8.sp, Color(0xff2F43FB), "poppinbold"),
+    ),
+    SizedBox(
+      width: 5.w,
+    ),
+    Container(
+      height: 9.h,
+      width: 220.w,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(6.r)),
+      child: Row(
+        children: [
+          Container(
+            height: 9.h,
+            width: width.w,
+            decoration: BoxDecoration(
+                color: Color(0xffFFD400),
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(6.r),
+                  bottomRight: Radius.circular(6.r),
+                )),
+          ),
+        ],
+      ),
+    ),
+    SizedBox(
+      width: 5.w,
+    ),
+    Text(
+      percnt,
+      style: textStyle(9.sp, Colors.black, "poppinbold"),
+    )
+  ]);
 }

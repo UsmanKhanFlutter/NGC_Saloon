@@ -5,6 +5,7 @@ import 'package:saloon/globals/UI_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:saloon/globals/colors.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:saloon/sociallogin/social_login.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -114,14 +115,19 @@ class _SignUpPageState extends State<SignUpPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 42.h,
-                      width: 47.w,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: AssetImage("assets/images/google.png"),
-                              fit: BoxFit.fill)),
+                    InkWell(
+                      onTap: () {
+                        SocialLogin().signInwithGoogle();
+                      },
+                      child: Container(
+                        height: 42.h,
+                        width: 47.w,
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/google.png"),
+                                fit: BoxFit.fill)),
+                      ),
                     ),
                     Container(
                       height: 42.h,

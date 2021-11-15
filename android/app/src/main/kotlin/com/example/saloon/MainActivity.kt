@@ -1,4 +1,4 @@
-package com.example.saloon
+package SalonNgen.org.com
 
 import io.flutter.embedding.android.FlutterActivity
 

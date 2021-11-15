@@ -4,9 +4,15 @@ import 'package:saloon/globals/colors.dart';
 import 'package:saloon/splash_Screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: AppColor.pinkcolor));
+
   runApp(const MyApp());
 }
 

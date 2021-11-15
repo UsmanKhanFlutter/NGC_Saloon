@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           "Forgot Password",
                           style: textStyle(10.sp, Colors.white, "poppin"),
-                        )
+                        ),
                       ],
                     ),
                   ),

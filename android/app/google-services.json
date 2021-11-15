@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "303955310359",
+    "project_id": "salonngen",
+    "storage_bucket": "salonngen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303955310359:android:fcf0ac7815fdb7aa186952",
+        "android_client_info": {
+          "package_name": "SalonNgen.org.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303955310359-slv81pvolplsst6d9qus2qkg25gs09pl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "SalonNgen.org.com",
+            "certificate_hash": "3d6c0d237d3ce929643aa194513905c7992c2fac"
+          }
+        },
+        {
+          "client_id": "303955310359-hj3h9s10c7cbp9dassjo41c0kbdnomt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsjsWt5QncSTKmuxoX9EROiC0grlH34Lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303955310359-hj3h9s10c7cbp9dassjo41c0kbdnomt2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

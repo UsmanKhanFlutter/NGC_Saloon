@@ -5,6 +5,7 @@ import 'package:saloon/globals/UI_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:saloon/globals/colors.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:saloon/sociallogin/social_login.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/images/SplashScreen.png"),
                 fit: BoxFit.fill)),
@@ -58,7 +59,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BottomNavBar()));
+                            builder: (context) => const BottomNavBar()));
                   },
                   child: Container(
                     height: 44.h,
@@ -75,7 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 SizedBox(height: 8.h),
-                Container(
+                SizedBox(
                   width: 276.w,
                   child: Row(
                     children: [
@@ -114,19 +115,24 @@ class _SignUpPageState extends State<SignUpPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 42.h,
-                      width: 47.w,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: AssetImage("assets/images/google.png"),
-                              fit: BoxFit.fill)),
+                    InkWell(
+                      onTap: () {
+                        SocialLogin().signInwithGoogle();
+                      },
+                      child: Container(
+                        height: 42.h,
+                        width: 47.w,
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/google.png"),
+                                fit: BoxFit.fill)),
+                      ),
                     ),
                     Container(
                       height: 42.h,
                       width: 47.w,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               image: AssetImage("assets/images/facebook.png"),
@@ -135,7 +141,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Container(
                       height: 42.h,
                       width: 47.w,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               image: AssetImage("assets/images/insta.png"),

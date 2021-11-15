@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/SplashScreen.png"),
                   fit: BoxFit.fill)),
@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SignUpPage()));
+                              builder: (context) => const SignUpPage()));
                     },
                     child: Container(
                       height: 44.h,
@@ -74,49 +74,47 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 8.h,
                   ),
-                  Container(
+                  SizedBox(
                     width: 276.w,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              FlutterSwitch(
-                                inactiveColor: Colors.grey.shade300,
-                                activeColor: Colors.grey.shade300,
-                                width: 35.w,
-                                height: 12.h,
-                                toggleSize: 10.h,
-                                value: keepLogin,
-                                borderRadius: 30.0,
-                                padding: 2.0,
-                                toggleColor: Colors.white,
-                                switchBorder: Border.all(
-                                  color: Colors.white,
-                                  width: 1.0,
-                                ),
-                                onToggle: (val) {
-                                  print(val);
-                                  setState(() {
-                                    keepLogin = val;
-                                  });
-                                },
+                        Row(
+                          children: [
+                            FlutterSwitch(
+                              inactiveColor: Colors.grey.shade300,
+                              activeColor: Colors.grey.shade300,
+                              width: 35.w,
+                              height: 12.h,
+                              toggleSize: 10.h,
+                              value: keepLogin,
+                              borderRadius: 30.0,
+                              padding: 2.0,
+                              toggleColor: Colors.white,
+                              switchBorder: Border.all(
+                                color: Colors.white,
+                                width: 1.0,
                               ),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              Text(
-                                "Keep Logged In",
-                                style: textStyle(10.sp, Colors.white, "poppin"),
-                              ),
-                            ],
-                          ),
+                              onToggle: (val) {
+                                print(val);
+                                setState(() {
+                                  keepLogin = val;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "Keep Logged In",
+                              style: textStyle(10.sp, Colors.white, "poppin"),
+                            ),
+                          ],
                         ),
                         Text(
                           "Forgot Password",
                           style: textStyle(10.sp, Colors.white, "poppin"),
-                        )
+                        ),
                       ],
                     ),
                   ),

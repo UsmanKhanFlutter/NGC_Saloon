@@ -23,17 +23,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
   late PageController _pageController;
 
   List<Widget> classesOptions = [
-    UndefinedPage(),
-    Trending(),
-    Deals(),
-    HomePage(),
-    AppointMent(),
-    ContactUs(),
-    VideoConsultaion()
+    const UndefinedPage(),
+    const Trending(),
+    const Deals(),
+    const HomePage(),
+    const AppointMent(),
+    const ContactUs(),
+    const VideoConsultaion()
   ];
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _pageController = PageController();
   }
@@ -58,12 +57,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   _selectedIndex = 0;
                 });
               },
-              child: Container(
-                child: Image.asset(
-                  "assets/images/Icon1@2x.png",
-                  height: _selectedIndex == 0 ? 31.h : 28.h,
-                  color: _selectedIndex == 0 ? AppColor.pinkcolor : null,
-                ),
+              child: Image.asset(
+                "assets/images/Icon1@2x.png",
+                height: _selectedIndex == 0 ? 31.h : 28.h,
+                color: _selectedIndex == 0 ? AppColor.pinkcolor : null,
               ),
             )),
             Expanded(
@@ -73,12 +70,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   _selectedIndex = 1;
                 });
               },
-              child: Container(
-                child: Image.asset(
-                  "assets/images/Icon2@2x.png",
-                  height: _selectedIndex == 1 ? 31.h : 28.h,
-                  color: _selectedIndex == 1 ? AppColor.pinkcolor : null,
-                ),
+              child: Image.asset(
+                "assets/images/Icon2@2x.png",
+                height: _selectedIndex == 1 ? 31.h : 28.h,
+                color: _selectedIndex == 1 ? AppColor.pinkcolor : null,
               ),
             )),
             Expanded(
@@ -88,12 +83,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   _selectedIndex = 2;
                 });
               },
-              child: Container(
-                child: Image.asset(
-                  "assets/images/Icon3@2x.png",
-                  height: _selectedIndex == 2 ? 31.h : 28.h,
-                  color: _selectedIndex == 2 ? AppColor.pinkcolor : null,
-                ),
+              child: Image.asset(
+                "assets/images/Icon3@2x.png",
+                height: _selectedIndex == 2 ? 31.h : 28.h,
+                color: _selectedIndex == 2 ? AppColor.pinkcolor : null,
               ),
             )),
             Expanded(
@@ -103,12 +96,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   _selectedIndex = 3;
                 });
               },
-              child: Container(
-                child: Image.asset(
-                  "assets/images/Icon4@2x.png",
-                  height: _selectedIndex == 3 ? 31.h : 28.h,
-                  color: _selectedIndex == 3 ? AppColor.pinkcolor : null,
-                ),
+              child: Image.asset(
+                "assets/images/Icon4@2x.png",
+                height: _selectedIndex == 3 ? 31.h : 28.h,
+                color: _selectedIndex == 3 ? AppColor.pinkcolor : null,
               ),
             )),
             Expanded(
@@ -118,12 +109,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   _selectedIndex = 4;
                 });
               },
-              child: Container(
-                child: Image.asset(
-                  "assets/images/Icon5@2x.png",
-                  height: _selectedIndex == 4 ? 31.h : 28.h,
-                  color: _selectedIndex == 4 ? AppColor.pinkcolor : null,
-                ),
+              child: Image.asset(
+                "assets/images/Icon5@2x.png",
+                height: _selectedIndex == 4 ? 31.h : 28.h,
+                color: _selectedIndex == 4 ? AppColor.pinkcolor : null,
               ),
             )),
             Expanded(
@@ -133,12 +122,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   _selectedIndex = 5;
                 });
               },
-              child: Container(
-                child: Image.asset(
-                  "assets/images/Icon6@2x.png",
-                  height: _selectedIndex == 5 ? 31.h : 28.h,
-                  color: _selectedIndex == 5 ? AppColor.pinkcolor : null,
-                ),
+              child: Image.asset(
+                "assets/images/Icon6@2x.png",
+                height: _selectedIndex == 5 ? 31.h : 28.h,
+                color: _selectedIndex == 5 ? AppColor.pinkcolor : null,
               ),
             )),
             Expanded(
@@ -148,12 +135,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   _selectedIndex = 6;
                 });
               },
-              child: Container(
-                child: Image.asset(
-                  "assets/images/Icon7@2x.png",
-                  height: _selectedIndex == 6 ? 31.h : 28.h,
-                  color: _selectedIndex == 6 ? AppColor.pinkcolor : null,
-                ),
+              child: Image.asset(
+                "assets/images/Icon7@2x.png",
+                height: _selectedIndex == 6 ? 31.h : 28.h,
+                color: _selectedIndex == 6 ? AppColor.pinkcolor : null,
               ),
             ))
           ]),

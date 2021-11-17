@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:saloon/globals/UI_widgets.dart';
+import 'package:saloon/globals/ui_widget.dart';
 import 'package:saloon/globals/colors.dart';
 
 class AboutStudio extends StatefulWidget {
@@ -99,10 +99,7 @@ class _AboutStudioState extends State<AboutStudio> {
                 ],
               ),
             ),
-            Expanded(
-              child: faqs(),
-            ),
-            // child: bodyContent[selectedindex]
+            Expanded(child: bodyContent[selectedindex]),
           ],
         ),
       ),
@@ -111,7 +108,7 @@ class _AboutStudioState extends State<AboutStudio> {
 }
 
 Widget about() {
-  return Container(
+  return SizedBox(
     width: 370.w,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +116,7 @@ Widget about() {
         SizedBox(
           height: 20.h,
         ),
-        Container(
+        SizedBox(
           height: 100.h,
           width: 369.w,
           child: Row(
@@ -139,7 +136,7 @@ Widget about() {
                   ),
                   Row(
                     children: [
-                      Container(
+                      SizedBox(
                         width: 220.w,
                         height: 50.h,
                         child: Text(
@@ -230,7 +227,7 @@ Widget about() {
             Container(
               height: 45.h,
               width: 45.w,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.black,
               ),
@@ -353,7 +350,7 @@ Widget services() {
   return Container(
     height: double.infinity,
     width: double.infinity,
-    color: Color(0xffFFF2F4),
+    color: const Color(0xffFFF2F4),
     child: Center(
       child: Column(children: [
         Align(
@@ -386,7 +383,7 @@ Widget services() {
                 "Skincare",
                 style: textStyle(16.sp, AppColor.pinkcolor, "poppinbold"),
               ),
-              Container(
+              SizedBox(
                 height: 39.h,
                 width: 280.w,
                 child: Text(
@@ -559,7 +556,7 @@ Widget services() {
 }
 
 Widget review() {
-  return Container(
+  return SizedBox(
     height: double.infinity,
     width: double.infinity,
     child: Center(
@@ -630,7 +627,7 @@ Widget review() {
       SizedBox(
         height: 60.h,
       ),
-      Container(
+      SizedBox(
         height: 90.h,
         width: 358.w,
         child: Column(
@@ -643,7 +640,7 @@ Widget review() {
               Text("15 April,2021",
                   style: textStyle(14.sp, Colors.black, "poppinbold"))
             ]),
-            Container(
+            SizedBox(
                 height: 50.h,
                 width: 358.w,
                 child: Text(
@@ -663,7 +660,7 @@ Widget review() {
       SizedBox(
         height: 30.h,
       ),
-      Container(
+      SizedBox(
         height: 90.h,
         width: 358.w,
         child: Column(
@@ -676,7 +673,7 @@ Widget review() {
               Text("15 April,2021",
                   style: textStyle(14.sp, Colors.black, "poppinbold"))
             ]),
-            Container(
+            SizedBox(
                 height: 50.h,
                 width: 358.w,
                 child: Text(
@@ -696,7 +693,7 @@ Widget review() {
       SizedBox(
         height: 30.h,
       ),
-      Container(
+      SizedBox(
         height: 90.h,
         width: 358.w,
         child: Column(
@@ -709,7 +706,7 @@ Widget review() {
               Text("15 April,2021",
                   style: textStyle(14.sp, Colors.black, "poppinbold"))
             ]),
-            Container(
+            SizedBox(
                 height: 50.h,
                 width: 358.w,
                 child: Text(
@@ -737,11 +734,11 @@ Widget review() {
               Container(
                 height: 30.h,
                 width: 30.w,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.black,
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.arrow_drop_down,
                   color: Colors.white,
                 ),
@@ -757,7 +754,7 @@ Widget review() {
 }
 
 Widget faqs() {
-  return Container(
+  return SizedBox(
     height: double.infinity,
     width: double.infinity,
     child: Center(
@@ -773,6 +770,191 @@ Widget faqs() {
               ),
             ),
           ),
+          SizedBox(
+            height: 30.h,
+          ),
+          Image.asset(
+            "assets/images/logo.png",
+            height: 50.h,
+          ),
+          Text(
+            "Ask Your Question!",
+            style: textStyle(13.sp, Colors.black, "poppinbold"),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Container(
+            width: 305.w,
+            height: 33.h,
+            decoration: BoxDecoration(
+                color: AppColor.orangColor,
+                borderRadius: BorderRadius.circular(1.r)),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Row(children: [
+                const Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
+                Text("What else you want to know about this salon?",
+                    style: textStyle(9.sp, Colors.white, "poppinbold"))
+              ]),
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 5, left: 10),
+              child: Text(
+                "Frequently Asked Questions:",
+                style: textStyle(13.sp, Colors.black, "poppinbold"),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            width: 350.w,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipi,",
+                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
+                    ),
+                    const Icon(Icons.arrow_drop_down, color: Colors.black)
+                  ],
+                ),
+                Container(
+                  height: 1.h,
+                  width: 350.w,
+                  color: Colors.grey[300],
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            width: 350.w,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipi,",
+                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
+                    ),
+                    const Icon(Icons.arrow_drop_down, color: Colors.black)
+                  ],
+                ),
+                Container(
+                  height: 1.h,
+                  width: 350.w,
+                  color: Colors.grey[300],
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            width: 350.w,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipi,",
+                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
+                    ),
+                    const Icon(Icons.arrow_drop_down, color: Colors.black)
+                  ],
+                ),
+                Container(
+                  height: 1.h,
+                  width: 350.w,
+                  color: Colors.grey[300],
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            width: 350.w,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipi,",
+                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
+                    ),
+                    const Icon(Icons.arrow_drop_down, color: Colors.black)
+                  ],
+                ),
+                Container(
+                  height: 1.h,
+                  width: 350.w,
+                  color: Colors.grey[300],
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            width: 350.w,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipi,",
+                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
+                    ),
+                    const Icon(Icons.arrow_drop_down, color: Colors.black)
+                  ],
+                ),
+                Container(
+                  height: 1.h,
+                  width: 350.w,
+                  color: Colors.grey[300],
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
+          Container(
+            height: 30.h,
+            width: 30.w,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.black,
+            ),
+            child: const Icon(
+              Icons.arrow_drop_down,
+              color: Colors.white,
+            ),
+          ),
         ],
       ),
     ),
@@ -783,7 +965,7 @@ Widget customerReviewChart(String number, String percnt, int width) {
   return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
     Text(
       number,
-      style: textStyle(8.sp, Color(0xff2F43FB), "poppinbold"),
+      style: textStyle(8.sp, const Color(0xff2F43FB), "poppinbold"),
     ),
     SizedBox(
       width: 5.w,
@@ -799,7 +981,7 @@ Widget customerReviewChart(String number, String percnt, int width) {
             height: 9.h,
             width: width.w,
             decoration: BoxDecoration(
-                color: Color(0xffFFD400),
+                color: const Color(0xffFFD400),
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(6.r),
                   bottomRight: Radius.circular(6.r),

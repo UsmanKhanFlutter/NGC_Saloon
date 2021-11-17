@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:saloon/Login/login_page.dart';
-import 'package:saloon/globals/UI_widgets.dart';
+import 'package:saloon/globals/ui_widget.dart';
 import 'package:saloon/globals/colors.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:saloon/Home/Appointment.dart';
+import 'package:saloon/Home/appointment_scrn.dart';
 import 'package:saloon/Home/Contact_Us.dart';
-import 'package:saloon/Home/Trending.dart';
-import 'package:saloon/Home/Video_Consultation.dart';
+import 'package:saloon/Home/trending_scrn.dart';
+import 'package:saloon/Home/video_consultant.dart';
 import 'package:saloon/Home/deals.dart';
-import 'package:saloon/Home/home_Page.dart';
+import 'package:saloon/Home/home_page.dart';
 import 'package:saloon/Home/undefindedPage.dart';
-import 'package:saloon/globals/UI_widgets.dart';
+import 'package:saloon/globals/ui_widget.dart';
 import 'package:saloon/globals/colors.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';

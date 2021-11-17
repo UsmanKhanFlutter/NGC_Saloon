@@ -31,7 +31,7 @@ Widget textfield(String hintText, IconData icon, Color iconcolor) {
 }
 
 Widget appBar() {
-  return Container(
+  return SizedBox(
     height: 60.h,
     width: double.infinity,
     child: Row(
@@ -50,8 +50,7 @@ Widget appBar() {
         ),
         Padding(
           padding: const EdgeInsets.only(right: 5),
-          child: Container(
-              child: Row(
+          child: Row(
             children: [
               Image.asset("assets/images/global.png"),
               SizedBox(
@@ -61,12 +60,12 @@ Widget appBar() {
                 "ENG",
                 style: textStyle(9.sp, Colors.black, "poppin"),
               ),
-              Icon(
+              const Icon(
                 Icons.arrow_drop_down,
                 color: Colors.black,
               )
             ],
-          )),
+          ),
         )
       ],
     ),

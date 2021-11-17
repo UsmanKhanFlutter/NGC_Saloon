@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:saloon/globals/UI_widgets.dart';
+import 'package:saloon/globals/ui_widget.dart';
 import 'package:saloon/globals/colors.dart';
 
 class AppointMent extends StatefulWidget {
@@ -92,7 +92,7 @@ class _AppointMentState extends State<AppointMent> {
                         ),
                       ],
                     ),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_drop_down,
                       color: Colors.black,
                     ),
@@ -104,7 +104,7 @@ class _AppointMentState extends State<AppointMent> {
                               child: Center(
                                 child: Text(
                                   e,
-                                  style: TextStyle(fontSize: 18),
+                                  style: const TextStyle(fontSize: 18),
                                 ),
                               ),
                               value: e,
@@ -151,7 +151,7 @@ class _AppointMentState extends State<AppointMent> {
                         ),
                       ],
                     ),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_drop_down,
                       color: Colors.black,
                     ),
@@ -163,14 +163,14 @@ class _AppointMentState extends State<AppointMent> {
                               child: Center(
                                 child: Text(
                                   e,
-                                  style: TextStyle(fontSize: 18),
+                                  style: const TextStyle(fontSize: 18),
                                 ),
                               ),
                               value: e,
                             ))
                         .toList(),
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -216,7 +216,7 @@ class _AppointMentState extends State<AppointMent> {
                       width: 320.w,
                       color: Colors.black26,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -251,7 +251,7 @@ class _AppointMentState extends State<AppointMent> {
                       width: 320.w,
                       color: Colors.black26,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -286,7 +286,7 @@ class _AppointMentState extends State<AppointMent> {
                       width: 320.w,
                       color: Colors.black26,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -321,7 +321,7 @@ class _AppointMentState extends State<AppointMent> {
                       width: 320.w,
                       color: Colors.black26,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -356,7 +356,7 @@ class _AppointMentState extends State<AppointMent> {
                       width: 320.w,
                       color: Colors.black26,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -391,13 +391,13 @@ class _AppointMentState extends State<AppointMent> {
                       width: 320.w,
                       color: Colors.black26,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -412,7 +412,7 @@ class _AppointMentState extends State<AppointMent> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(2.r),
                     color: AppColor.orangColor),
-              )
+              ),
             ],
           ),
         )

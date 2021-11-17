@@ -98,6 +98,12 @@ flutter:
     - family: poppinbold
       fonts:
          - asset: assets/fonts/poppinbold.ttf
+    - family: poppinmed
+      fonts:
+         - asset: assets/fonts/poppinmed.ttf
+    - family: poppinsemi
+      fonts:
+         - asset: assets/fonts/poppinsemi.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

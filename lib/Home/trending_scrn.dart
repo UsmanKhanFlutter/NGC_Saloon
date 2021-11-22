@@ -17,6 +17,7 @@ class _TrendingState extends State<Trending> {
         body: Center(
       child: Column(
         children: [
+          topContainer("Trending"),
           SizedBox(height: 10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +35,7 @@ class _TrendingState extends State<Trending> {
           Card(
             elevation: 1,
             child: Container(
-              height: 590.h,
+              height: 580.h,
               width: 388.w,
               color: Color(0xffFFECEC),
               child: Column(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saloon/Home/appointment_scrn.dart';
-import 'package:saloon/Home/Contact_Us.dart';
+import 'package:saloon/Home/contact_us.dart';
 import 'package:saloon/Home/trending_scrn.dart';
 import 'package:saloon/Home/video_consultant.dart';
 import 'package:saloon/Home/deals.dart';

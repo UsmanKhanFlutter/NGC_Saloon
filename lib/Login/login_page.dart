@@ -64,9 +64,12 @@ class _LoginPageState extends State<LoginPage> {
                           color: AppColor.pinkcolor,
                           borderRadius: BorderRadius.circular(4.r)),
                       child: Center(
-                        child: Text(
-                          "LOG IN",
-                          style: textStyle(20.sp, Colors.white, "poppin"),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: Text(
+                            "LOG IN",
+                            style: textStyle(20.sp, Colors.white, "poppin"),
+                          ),
                         ),
                       ),
                     ),

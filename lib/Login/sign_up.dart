@@ -68,9 +68,12 @@ class _SignUpPageState extends State<SignUpPage> {
                         color: AppColor.pinkcolor,
                         borderRadius: BorderRadius.circular(4.r)),
                     child: Center(
-                      child: Text(
-                        "GET STARTED",
-                        style: textStyle(20.sp, Colors.white, "poppin"),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(
+                          "GET STARTED",
+                          style: textStyle(20.sp, Colors.white, "poppin"),
+                        ),
                       ),
                     ),
                   ),

@@ -104,6 +104,9 @@ flutter:
     - family: poppinsemi
       fonts:
          - asset: assets/fonts/poppinsemi.ttf
+    - family: myriadpro
+      fonts:
+         - asset: assets/fonts/myriadprolight.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

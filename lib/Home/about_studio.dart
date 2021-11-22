@@ -17,11 +17,14 @@ class _AboutStudioState extends State<AboutStudio> {
     "Reviews",
     "FAQs",
   ];
-  List<Widget> bodyContent = [about(), services(), review(), faqs()];
+
+  final scaffolkey = GlobalKey<ScaffoldState>();
+
   int selectedindex = 0;
   String selectedtab = "About";
   @override
   Widget build(BuildContext context) {
+    List<Widget> bodyContent = [about(context), services(), review(), faqs()];
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -107,7 +110,7 @@ class _AboutStudioState extends State<AboutStudio> {
   }
 }
 
-Widget about() {
+Widget about(BuildContext context) {
   return SizedBox(
     width: 370.w,
     child: Column(
@@ -145,7 +148,476 @@ Widget about() {
                               8.sp, AppColor.textfieldColor, "poppin"),
                         ),
                       ),
-                      Image.asset("assets/images/cam.png")
+                      InkWell(
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Dialog(
+                                    child: Container(
+                                      height: 365.h,
+                                      width: 335.w,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(4.r),
+                                          color: Colors.white),
+                                      child: Center(
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 20.h,
+                                            ),
+                                            Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                      "assets/images/pinkcam.png",
+                                                      height: 30.h),
+                                                  Text(
+                                                    "Online Video Consultation",
+                                                    style: textStyle(
+                                                        13.sp,
+                                                        Colors.black,
+                                                        "poppinsemi"),
+                                                  )
+                                                ]),
+                                            SizedBox(
+                                              height: 20.h,
+                                            ),
+                                            Container(
+                                                height: 37.h,
+                                                width: 270.w,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          2.r),
+                                                  color:
+                                                      AppColor.textfieldColor,
+                                                ),
+                                                child: TextFormField(
+                                                  decoration:
+                                                      const InputDecoration(
+                                                          focusedBorder:
+                                                              InputBorder.none,
+                                                          disabledBorder:
+                                                              InputBorder.none,
+                                                          enabledBorder:
+                                                              InputBorder.none,
+                                                          prefixIcon: Icon(
+                                                            Icons
+                                                                .perm_contact_cal_rounded,
+                                                          ),
+                                                          hintText:
+                                                              "GlamStudio by Farial k."),
+                                                  style:
+                                                      TextStyle(fontSize: 10.h),
+                                                )
+
+                                                // The list of options
+                                                ),
+                                            SizedBox(
+                                              height: 10.h,
+                                            ),
+                                            Container(
+                                                height: 37.h,
+                                                width: 270.w,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          2.r),
+                                                  color:
+                                                      AppColor.textfieldColor,
+                                                ),
+                                                child: TextFormField(
+                                                  decoration: const InputDecoration(
+                                                      focusedBorder:
+                                                          InputBorder.none,
+                                                      disabledBorder:
+                                                          InputBorder.none,
+                                                      enabledBorder:
+                                                          InputBorder.none,
+                                                      prefixIcon: Icon(
+                                                          Icons.person_pin),
+                                                      hintText: "Name"),
+                                                  style:
+                                                      TextStyle(fontSize: 10.h),
+                                                )
+
+                                                // The list of options
+                                                ),
+                                            SizedBox(height: 10.h),
+                                            Container(
+                                                height: 37.h,
+                                                width: 270.w,
+                                                color: AppColor.pinkcolor,
+                                                child: Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width: 10.w,
+                                                    ),
+                                                    const Icon(
+                                                      Icons.alarm,
+                                                      color: Colors.white,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 10.w,
+                                                    ),
+                                                    Text(
+                                                      "Time",
+                                                      style: textStyle(
+                                                          10.sp,
+                                                          Colors.white,
+                                                          "poppin"),
+                                                    )
+                                                  ],
+                                                )),
+                                            Container(
+                                              height: 90.h,
+                                              width: 270.w,
+                                              color: AppColor.pinkLight,
+                                              child: Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height: 5.h,
+                                                  ),
+                                                  Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceAround,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.arrow_back_ios,
+                                                          size: 15.h,
+                                                          color: Colors.grey,
+                                                        ),
+                                                        Column(children: [
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Saturday,oct,21",
+                                                                style: textStyle(
+                                                                    8.sp,
+                                                                    Colors
+                                                                        .black54,
+                                                                    "poppin"),
+                                                              ),
+                                                              SizedBox(
+                                                                width: 5.h,
+                                                              ),
+                                                              Text(
+                                                                "Sunday,oct,21",
+                                                                style: textStyle(
+                                                                    8.sp,
+                                                                    Colors
+                                                                        .black54,
+                                                                    "poppin"),
+                                                              ),
+                                                              SizedBox(
+                                                                width: 5.h,
+                                                              ),
+                                                              Text(
+                                                                "Monday,oct,21",
+                                                                style: textStyle(
+                                                                    8.sp,
+                                                                    Colors
+                                                                        .black54,
+                                                                    "poppin"),
+                                                              )
+                                                            ],
+                                                          ),
+                                                          SizedBox(
+                                                            height: 5.h,
+                                                          ),
+                                                          Container(
+                                                            height: 2.h,
+                                                            width: 220.w,
+                                                            color: AppColor
+                                                                .textfieldColor,
+                                                          )
+                                                        ]),
+                                                        Icon(
+                                                          Icons
+                                                              .arrow_forward_ios,
+                                                          size: 15.h,
+                                                          color: Colors.grey,
+                                                        ),
+                                                      ]),
+                                                  SizedBox(
+                                                    height: 10.h,
+                                                  ),
+                                                  Row(children: [
+                                                    SizedBox(
+                                                      width: 5.h,
+                                                    ),
+                                                    Icon(
+                                                      Icons.wb_sunny,
+                                                      color: Colors.yellow[600],
+                                                      size: 15.h,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 2.h,
+                                                    ),
+                                                    Text(
+                                                      "Afternoon",
+                                                      style: textStyle(
+                                                          8.sp,
+                                                          Colors.black54,
+                                                          "poppin"),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 10.h,
+                                                    ),
+                                                    Container(
+                                                      height: 15.h,
+                                                      width: 40.w,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "02:00pm",
+                                                          style: textStyle(
+                                                              7.sp,
+                                                              Colors.black54,
+                                                              "poppin"),
+                                                        ),
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 1.w,
+                                                              color: Colors
+                                                                  .black54)),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 1.h,
+                                                    ),
+                                                    Container(
+                                                      height: 15.h,
+                                                      width: 40.w,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "02:00pm",
+                                                          style: textStyle(
+                                                              7.sp,
+                                                              Colors.black54,
+                                                              "poppin"),
+                                                        ),
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 1.w,
+                                                              color: Colors
+                                                                  .black54)),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 1.h,
+                                                    ),
+                                                    Container(
+                                                      height: 15.h,
+                                                      width: 40.w,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "02:00pm",
+                                                          style: textStyle(
+                                                              7.sp,
+                                                              Colors.black54,
+                                                              "poppin"),
+                                                        ),
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 1.w,
+                                                              color: Colors
+                                                                  .black54)),
+                                                    ),
+                                                  ]),
+                                                  SizedBox(
+                                                    height: 10.h,
+                                                  ),
+                                                  Row(children: [
+                                                    SizedBox(
+                                                      width: 5.h,
+                                                    ),
+                                                    Icon(
+                                                      Icons.brightness_4,
+                                                      color: Colors.red[900],
+                                                      size: 15.h,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 2.h,
+                                                    ),
+                                                    Text(
+                                                      "Evening",
+                                                      style: textStyle(
+                                                          8.sp,
+                                                          Colors.black54,
+                                                          "poppin"),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 17.h,
+                                                    ),
+                                                    Container(
+                                                      height: 15.h,
+                                                      width: 40.w,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "02:00pm",
+                                                          style: textStyle(
+                                                              7.sp,
+                                                              Colors.black54,
+                                                              "poppin"),
+                                                        ),
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 1.w,
+                                                              color: Colors
+                                                                  .black54)),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 1.h,
+                                                    ),
+                                                    Container(
+                                                      height: 15.h,
+                                                      width: 40.w,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "02:00pm",
+                                                          style: textStyle(
+                                                              7.sp,
+                                                              Colors.black54,
+                                                              "poppin"),
+                                                        ),
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 1.w,
+                                                              color: Colors
+                                                                  .black54)),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 1.h,
+                                                    ),
+                                                    Container(
+                                                      height: 15.h,
+                                                      width: 40.w,
+                                                      child: Center(
+                                                        child: Text(
+                                                          "02:00pm",
+                                                          style: textStyle(
+                                                              7.sp,
+                                                              Colors.black54,
+                                                              "poppin"),
+                                                        ),
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 1.w,
+                                                              color: Colors
+                                                                  .black54)),
+                                                    ),
+                                                  ])
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(height: 20.h),
+                                            InkWell(
+                                              onTap: () {
+                                                showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (BuildContext context) {
+                                                      return Dialog(
+                                                        child: Container(
+                                                          height: 365.h,
+                                                          width: 335.w,
+                                                          child: Column(
+                                                              children: [
+                                                                SizedBox(
+                                                                  height: 20.h,
+                                                                ),
+                                                                Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Image.asset(
+                                                                          "assets/images/pinkcam.png",
+                                                                          height:
+                                                                              30.h),
+                                                                      Text(
+                                                                        "Online Video Consultation",
+                                                                        style: textStyle(
+                                                                            13.sp,
+                                                                            Colors.black,
+                                                                            "poppinsemi"),
+                                                                      )
+                                                                    ]),
+                                                                SizedBox(
+                                                                  height: 10.h,
+                                                                ),
+                                                                Icon(
+                                                                    Icons
+                                                                        .priority_high,
+                                                                    size: 140.h,
+                                                                    color: Colors
+                                                                        .black),
+                                                                Container(
+                                                                  width: 240.w,
+                                                                  child: Text(
+                                                                      "Dear User! You are not subscribed to Online Video Consultation Offer. Please Subscribe to Enjoy Video Consultations with Dermatologists and Specialists"),
+                                                                ),
+                                                                SizedBox(
+                                                                  height: 20.h,
+                                                                ),
+                                                                Container(
+                                                                  height: 37.h,
+                                                                  width: 270.w,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: AppColor
+                                                                        .orangColor,
+                                                                  ),
+                                                                  child: Center(
+                                                                    child: Text(
+                                                                      "Subscribe Now",
+                                                                      style: textStyle(
+                                                                          14.sp,
+                                                                          Colors
+                                                                              .white,
+                                                                          "poppin"),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ]),
+                                                        ),
+                                                      );
+                                                    });
+                                              },
+                                              child: Container(
+                                                height: 37.h,
+                                                width: 270.w,
+                                                decoration: BoxDecoration(
+                                                  color: AppColor.orangColor,
+                                                ),
+                                                child: Center(
+                                                  child: Text(
+                                                    "Book Appointment",
+                                                    style: textStyle(14.sp,
+                                                        Colors.white, "poppin"),
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                });
+                          },
+                          child: Image.asset(
+                            "assets/images/cam.png",
+                            height: 17.h,
+                          ))
                     ],
                   ),
                   Row(

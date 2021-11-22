@@ -14,23 +14,19 @@ Widget textfield(String hintText, IconData icon, Color iconcolor) {
       color: AppColor.textfieldColor,
       child: TextField(
         decoration: InputDecoration(
-            contentPadding: const EdgeInsets.only(top: 8, right: 60),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.only(left: 30),
-              child: Icon(
-                icon,
-                color: iconcolor,
-              ),
+            prefixIcon: Icon(
+              icon,
+              color: iconcolor,
             ),
             enabledBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
             hintText: hintText,
-            hintStyle: textStyle(13.sp, Colors.white, "myriad")),
+            hintStyle: textStyle(13.sp, Colors.white, "myriadpro")),
       ));
 }
 
-Widget appBar() {
+Widget appBar(VoidCallback onpressed) {
   return SizedBox(
     height: 60.h,
     width: double.infinity,
@@ -39,7 +35,9 @@ Widget appBar() {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 12),
-          child: Image.asset("assets/images/drawericon.png"),
+          child: InkWell(
+              onTap: onpressed,
+              child: Image.asset("assets/images/drawericon.png")),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10, left: 12),

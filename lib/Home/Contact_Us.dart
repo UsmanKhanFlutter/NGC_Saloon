@@ -1,3 +1,6 @@
+// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:saloon/globals/ui_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,13 +21,16 @@ class _ContactUsState extends State<ContactUs> {
       child: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/images/contactbackground.png"),
                 fit: BoxFit.fill)),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            topContainer("Contact Us"),
+            SizedBox(
+              height: 45.h,
+            ),
             Text(
               "CONTACT US TODAY!",
               style: textStyle(26.sp, Colors.black, "poppinbold"),
@@ -103,7 +109,7 @@ Widget contactTextfield(String hinttext) {
               image: DecorationImage(
                   image: AssetImage("assets/images/pink.png"),
                   fit: BoxFit.fill)),
-          child: Center(
+          child: const Center(
             child: Icon(
               Icons.edit,
               color: Colors.white,

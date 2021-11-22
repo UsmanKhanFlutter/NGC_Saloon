@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:saloon/Home/about_studio.dart';
 import 'package:saloon/globals/ui_widget.dart';
@@ -16,141 +18,260 @@ class _HomePageState extends State<HomePage> {
   bool skincare = false;
   bool nails = false;
   bool feet = false;
+  final scaffoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          appBar(),
-          SizedBox(
-            height: 20.h,
-          ),
-          Container(
-            height: 34.h,
-            width: 376.w,
-            color: AppColor.textfieldColor,
-            child: Row(
+        key: scaffoldkey,
+        drawer: Container(
+          alignment: Alignment.topLeft,
+          child: Container(
+            height: 620.h,
+            width: 282.w,
+            color: const Color(0xffE8E8E8),
+            child: Column(
               children: [
+                SizedBox(
+                  height: 30.h,
+                ),
                 Container(
-                    height: 33.h,
-                    width: 327.w,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          focusedBorder: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          contentPadding: EdgeInsets.all(2),
-                          hintText: "Search for Beauty Salons",
-                          hintStyle:
-                              TextStyle(fontSize: 12.sp, fontFamily: "poppin"),
-                          prefixIcon: Icon(
-                            Icons.search,
-                            color: Colors.black54,
-                          )),
-                    )),
-                Container(
-                  width: 48.w,
-                  height: 33.h,
-                  child: Image.asset("assets/images/Location.png"),
-                  color: AppColor.orangColor,
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          Container(
-            width: 376.w,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Categories",
-                  style: textStyle(14.sp, Colors.black, "poppin"),
+                  height: 102.h,
+                  width: 102.w,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.white),
+                  child: Center(
+                      child: Icon(
+                    Icons.person,
+                    color: Colors.grey[200],
+                    size: 70.h,
+                  )),
                 ),
                 Text(
-                  "View all",
-                  style: textStyle(10.sp, Colors.black, "poppin"),
-                )
+                  "AhmadAliKhan@gmail.com",
+                  style: textStyle(15.sp, Colors.black, "poppin"),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Container(
+                  height: 1.50.h,
+                  width: double.infinity,
+                  color: const Color(0xffAEAEAE),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  SizedBox(
+                    width: 30.h,
+                  ),
+                  Image.asset(
+                    "assets/images/info.png",
+                    height: 20.h,
+                  ),
+                  SizedBox(
+                    width: 5.h,
+                  ),
+                  Text("About Sal-One",
+                      style: textStyle(15.sp, Colors.black, "poppin"))
+                ]),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Container(
+                  height: 1.50.h,
+                  width: 214.w,
+                  color: const Color(0xffAEAEAE),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  SizedBox(
+                    width: 30.h,
+                  ),
+                  Image.asset(
+                    "assets/images/contact.png",
+                    height: 20.h,
+                  ),
+                  SizedBox(
+                    width: 5.h,
+                  ),
+                  Text("Contact Us",
+                      style: textStyle(15.sp, Colors.black, "poppin"))
+                ]),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Container(
+                  height: 1.50.h,
+                  width: 214.w,
+                  color: const Color(0xffAEAEAE),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  SizedBox(
+                    width: 30.h,
+                  ),
+                  Image.asset(
+                    "assets/images/help.png",
+                    height: 20.h,
+                  ),
+                  SizedBox(
+                    width: 5.h,
+                  ),
+                  Text("Help", style: textStyle(15.sp, Colors.black, "poppin"))
+                ]),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Container(
+                  height: 1.50.h,
+                  width: 214.w,
+                  color: const Color(0xffAEAEAE),
+                ),
               ],
             ),
           ),
-          SizedBox(
-            height: 10.h,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        ),
+        body: SingleChildScrollView(
+          child: Column(
             children: [
-              categoriesContainer("assets/images/makeup.png", "Make Up", () {
-                setState(() {
-                  makeup = true;
-                  skincare = false;
-                  nails = false;
-                  feet = false;
-                });
-              },
-                  makeup ? AppColor.orangColor : AppColor.textfieldColor,
-                  makeup ? Colors.white : Colors.black54,
-                  makeup ? Colors.white : Colors.black54),
-              categoriesContainer("assets/images/Facial.png", "Skin Care", () {
-                setState(() {
-                  makeup = false;
-                  skincare = true;
-                  nails = false;
-                  feet = false;
-                });
-              },
-                  skincare ? AppColor.orangColor : AppColor.textfieldColor,
-                  skincare ? Colors.white : Colors.black54,
-                  skincare ? Colors.white : Colors.black54),
-              categoriesContainer("assets/images/Nail.png", "Nails", () {
-                setState(() {
-                  makeup = false;
-                  skincare = false;
-                  nails = true;
-                  feet = false;
-                });
-              },
-                  nails ? AppColor.orangColor : AppColor.textfieldColor,
-                  nails ? Colors.white : Colors.black54,
-                  nails ? Colors.white : Colors.black54),
-              categoriesContainer("assets/images/Feet.png", "Feet", () {
-                setState(() {
-                  makeup = false;
-                  skincare = false;
-                  nails = false;
-                  feet = true;
-                });
-              },
-                  feet ? AppColor.orangColor : AppColor.textfieldColor,
-                  feet ? Colors.white : Colors.black54,
-                  feet ? Colors.white : Colors.black54),
+              appBar(() {
+                scaffoldkey.currentState!.openDrawer();
+              }),
+              SizedBox(
+                height: 20.h,
+              ),
+              Container(
+                height: 34.h,
+                width: 376.w,
+                color: AppColor.textfieldColor,
+                child: Row(
+                  children: [
+                    Container(
+                        height: 33.h,
+                        width: 327.w,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              contentPadding: EdgeInsets.all(2),
+                              hintText: "Search for Beauty Salons",
+                              hintStyle: TextStyle(
+                                  fontSize: 12.sp, fontFamily: "poppin"),
+                              prefixIcon: Icon(
+                                Icons.search,
+                                color: Colors.black54,
+                              )),
+                        )),
+                    Container(
+                      width: 48.w,
+                      height: 33.h,
+                      child: Image.asset("assets/images/Location.png"),
+                      color: AppColor.orangColor,
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                width: 376.w,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Categories",
+                      style: textStyle(14.sp, Colors.black, "poppin"),
+                    ),
+                    Text(
+                      "View all",
+                      style: textStyle(10.sp, Colors.black, "poppin"),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  categoriesContainer("assets/images/makeup.png", "Make Up",
+                      () {
+                    setState(() {
+                      makeup = true;
+                      skincare = false;
+                      nails = false;
+                      feet = false;
+                    });
+                  },
+                      makeup ? AppColor.orangColor : AppColor.textfieldColor,
+                      makeup ? Colors.white : Colors.black54,
+                      makeup ? Colors.white : Colors.black54),
+                  categoriesContainer("assets/images/Facial.png", "Skin Care",
+                      () {
+                    setState(() {
+                      makeup = false;
+                      skincare = true;
+                      nails = false;
+                      feet = false;
+                    });
+                  },
+                      skincare ? AppColor.orangColor : AppColor.textfieldColor,
+                      skincare ? Colors.white : Colors.black54,
+                      skincare ? Colors.white : Colors.black54),
+                  categoriesContainer("assets/images/Nail.png", "Nails", () {
+                    setState(() {
+                      makeup = false;
+                      skincare = false;
+                      nails = true;
+                      feet = false;
+                    });
+                  },
+                      nails ? AppColor.orangColor : AppColor.textfieldColor,
+                      nails ? Colors.white : Colors.black54,
+                      nails ? Colors.white : Colors.black54),
+                  categoriesContainer("assets/images/Feet.png", "Feet", () {
+                    setState(() {
+                      makeup = false;
+                      skincare = false;
+                      nails = false;
+                      feet = true;
+                    });
+                  },
+                      feet ? AppColor.orangColor : AppColor.textfieldColor,
+                      feet ? Colors.white : Colors.black54,
+                      feet ? Colors.white : Colors.black54),
+                ],
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              salonContainer(() {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) =>const AboutStudio()));
+              }),
+              SizedBox(
+                height: 10.h,
+              ),
+              salonContainer(() {}),
+              SizedBox(
+                height: 10.h,
+              ),
+              salonContainer(() {}),
+              SizedBox(
+                height: 10.h,
+              ),
+              salonContainer(() {}),
             ],
           ),
-          SizedBox(
-            height: 20.h,
-          ),
-          salonContainer(() {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => AboutStudio()));
-          }),
-          SizedBox(
-            height: 10.h,
-          ),
-          salonContainer(() {}),
-          SizedBox(
-            height: 10.h,
-          ),
-          salonContainer(() {}),
-          SizedBox(
-            height: 10.h,
-          ),
-          salonContainer(() {}),
-        ],
-      ),
-    ));
+        ));
   }
 }
 

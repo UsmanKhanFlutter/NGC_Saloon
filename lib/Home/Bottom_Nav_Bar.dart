@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:saloon/Home/appointment_scrn.dart';
 import 'package:saloon/Home/contact_us.dart';
@@ -19,17 +21,17 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
   late PageController _pageController;
 
   List<Widget> classesOptions = [
-    const UndefinedPage(),
-    const Trending(),
-    const Deals(),
+    // const UndefinedPage(),
+    // const Trending(),
+    // const Deals(),
     const HomePage(),
     const AppointMent(),
     const ContactUs(),
-    const VideoConsultaion()
+    // const VideoConsultaion()
   ];
   @override
   void initState() {
@@ -50,6 +52,45 @@ class _BottomNavBarState extends State<BottomNavBar> {
         height: 45.h,
         child: BottomAppBar(
           child: Row(children: [
+            // Expanded(
+            //     child: InkWell(
+            //   onTap: () {
+            //     setState(() {
+            //       _selectedIndex = 0;
+            //     });
+            //   },
+            //   child: Image.asset(
+            //     "assets/images/Icon1@2x.png",
+            //     height: _selectedIndex == 0 ? 31.h : 28.h,
+            //     color: _selectedIndex == 0 ? AppColor.pinkcolor : null,
+            //   ),
+            // )),
+            // Expanded(
+            //     child: InkWell(
+            //   onTap: () {
+            //     setState(() {
+            //       _selectedIndex = 1;
+            //     });
+            //   },
+            //   child: Image.asset(
+            //     "assets/images/Icon2@2x.png",
+            //     height: _selectedIndex == 1 ? 31.h : 28.h,
+            //     color: _selectedIndex == 1 ? AppColor.pinkcolor : null,
+            //   ),
+            // )),
+            // Expanded(
+            //     child: InkWell(
+            //   onTap: () {
+            //     setState(() {
+            //       _selectedIndex = 2;
+            //     });
+            //   },
+            //   child: Image.asset(
+            //     "assets/images/Icon3@2x.png",
+            //     height: _selectedIndex == 2 ? 31.h : 28.h,
+            //     color: _selectedIndex == 2 ? AppColor.pinkcolor : null,
+            //   ),
+            // )),
             Expanded(
                 child: InkWell(
               onTap: () {
@@ -58,7 +99,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 });
               },
               child: Image.asset(
-                "assets/images/Icon1@2x.png",
+                "assets/images/Icon4@2x.png",
                 height: _selectedIndex == 0 ? 31.h : 28.h,
                 color: _selectedIndex == 0 ? AppColor.pinkcolor : null,
               ),
@@ -71,7 +112,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 });
               },
               child: Image.asset(
-                "assets/images/Icon2@2x.png",
+                "assets/images/Icon5@2x.png",
                 height: _selectedIndex == 1 ? 31.h : 28.h,
                 color: _selectedIndex == 1 ? AppColor.pinkcolor : null,
               ),
@@ -79,68 +120,29 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Expanded(
                 child: InkWell(
               onTap: () {
-                setState(() {
+                setState(() { 
                   _selectedIndex = 2;
                 });
               },
               child: Image.asset(
-                "assets/images/Icon3@2x.png",
+                "assets/images/Icon6@2x.png",
                 height: _selectedIndex == 2 ? 31.h : 28.h,
                 color: _selectedIndex == 2 ? AppColor.pinkcolor : null,
               ),
             )),
-            Expanded(
-                child: InkWell(
-              onTap: () {
-                setState(() {
-                  _selectedIndex = 3;
-                });
-              },
-              child: Image.asset(
-                "assets/images/Icon4@2x.png",
-                height: _selectedIndex == 3 ? 31.h : 28.h,
-                color: _selectedIndex == 3 ? AppColor.pinkcolor : null,
-              ),
-            )),
-            Expanded(
-                child: InkWell(
-              onTap: () {
-                setState(() {
-                  _selectedIndex = 4;
-                });
-              },
-              child: Image.asset(
-                "assets/images/Icon5@2x.png",
-                height: _selectedIndex == 4 ? 31.h : 28.h,
-                color: _selectedIndex == 4 ? AppColor.pinkcolor : null,
-              ),
-            )),
-            Expanded(
-                child: InkWell(
-              onTap: () {
-                setState(() {
-                  _selectedIndex = 5;
-                });
-              },
-              child: Image.asset(
-                "assets/images/Icon6@2x.png",
-                height: _selectedIndex == 5 ? 31.h : 28.h,
-                color: _selectedIndex == 5 ? AppColor.pinkcolor : null,
-              ),
-            )),
-            Expanded(
-                child: InkWell(
-              onTap: () {
-                setState(() {
-                  _selectedIndex = 6;
-                });
-              },
-              child: Image.asset(
-                "assets/images/Icon7@2x.png",
-                height: _selectedIndex == 6 ? 31.h : 28.h,
-                color: _selectedIndex == 6 ? AppColor.pinkcolor : null,
-              ),
-            ))
+            // Expanded(
+            //     child: InkWell(
+            //   onTap: () {
+            //     setState(() {
+            //       _selectedIndex = 6;
+            //     });
+            //   },
+            //   child: Image.asset(
+            //     "assets/images/Icon7@2x.png",
+            //     height: _selectedIndex == 6 ? 31.h : 28.h,
+            //     color: _selectedIndex == 6 ? AppColor.pinkcolor : null,
+            //   ),
+            // ))
           ]),
         ),
       ),

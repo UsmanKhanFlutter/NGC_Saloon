@@ -27,7 +27,8 @@ Widget textfield(String hintText, IconData icon, Color iconcolor) {
 }
 
 Widget appBar(VoidCallback onpressed) {
-  return SizedBox(
+  return Container(
+    color: Colors.white,
     height: 60.h,
     width: double.infinity,
     child: Row(
@@ -37,26 +38,52 @@ Widget appBar(VoidCallback onpressed) {
           padding: const EdgeInsets.only(left: 12),
           child: InkWell(
               onTap: onpressed,
-              child: Image.asset("assets/images/drawericon.png")),
+              child: Stack(
+                children: [
+                  Container(
+                    height: 40.h,
+                    width: 40.w,
+                    decoration: BoxDecoration(
+                        color: AppColor.pinkcolor, shape: BoxShape.circle),
+                  ),
+                  Positioned(
+                    left: 25.w,
+                    top: 30.h,
+                    child: Container(
+                      height: 10.h,
+                      width: 10.w,
+                      child: Image.asset(
+                        "assets/images/drawericon.png",
+                        height: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[300], shape: BoxShape.circle),
+                    ),
+                  )
+                ],
+              )),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 10, left: 12),
+          padding: const EdgeInsets.only(left: 35),
           child: Image.asset(
             "assets/images/saloonlogo.png",
-            height: 60.h,
+            height: 40.h,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 5),
           child: Row(
             children: [
-              Image.asset("assets/images/global.png"),
+              const Icon(
+                Icons.location_on_outlined,
+                color: Colors.black38,
+              ),
               SizedBox(
                 width: 2.sp,
               ),
               Text(
-                "ENG",
-                style: textStyle(9.sp, Colors.black, "poppin"),
+                "Pakistan",
+                style: textStyle(14.sp, Colors.black54, "poppinbold"),
               ),
               const Icon(
                 Icons.arrow_drop_down,

@@ -12,31 +12,74 @@ class AboutStudio extends StatefulWidget {
 
 class _AboutStudioState extends State<AboutStudio> {
   List pagesName = [
-    "About",
+    "Feedback",
+    "Salon Details",
     "Services",
+    "Experience",
     "Reviews",
-    "FAQs",
   ];
 
   final scaffolkey = GlobalKey<ScaffoldState>();
 
   int selectedindex = 0;
-  String selectedtab = "About";
+  String selectedtab = "Feedback";
   @override
   Widget build(BuildContext context) {
-    List<Widget> bodyContent = [about(context), services(), review(), faqs()];
+    List<Widget> bodyContent = [
+      about(context),
+      services(),
+      review(),
+      faqs(),
+      review()
+    ];
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            topContainer("GlamStudio"),
+            Container(
+              height: 30.h,
+              width: double.infinity,
+              color: AppColor.pinkcolor,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 5.w),
+                    child: Container(
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 15.h,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    "Glam Studio by Faryal k.",
+                    style: TextStyle(
+                        fontSize: 16.sp,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 20.w),
+                    child: const Icon(
+                      Icons.share,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+            ),
             Container(
               width: double.infinity,
-              height: 30.h,
-              color: AppColor.textfieldColor,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              height: 50.h,
+              child: ListView(
+                padding: EdgeInsets.only(top: 20.h),
+                scrollDirection: Axis.horizontal,
                 children: [
+                  SizedBox(
+                    width: 10.h,
+                  ),
                   InkWell(
                     onTap: () {
                       setState(() {
@@ -44,13 +87,30 @@ class _AboutStudioState extends State<AboutStudio> {
                         selectedindex = 0;
                       });
                     },
-                    child: Text(
-                      pagesName[0],
-                      style: textStyle(
-                          12.sp,
-                          selectedtab == "About" ? Colors.black : Colors.grey,
-                          "poppinbold"),
+                    child: Column(
+                      children: [
+                        Text(pagesName[0],
+                            style: TextStyle(
+                                fontSize: 15.sp,
+                                color: selectedtab == "Feedback"
+                                    ? AppColor.pinkcolor
+                                    : Colors.grey,
+                                fontWeight: FontWeight.w600)),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        selectedindex == 0
+                            ? Container(
+                                height: 3.h,
+                                width: 75.w,
+                                color: AppColor.pinkcolor,
+                              )
+                            : Container()
+                      ],
                     ),
+                  ),
+                  SizedBox(
+                    width: 20.h,
                   ),
                   InkWell(
                     onTap: () {
@@ -59,15 +119,30 @@ class _AboutStudioState extends State<AboutStudio> {
                         selectedindex = 1;
                       });
                     },
-                    child: Text(
-                      pagesName[1],
-                      style: textStyle(
-                          12.sp,
-                          selectedtab == "Services"
-                              ? Colors.black
-                              : Colors.grey,
-                          "poppinbold"),
+                    child: Column(
+                      children: [
+                        Text(pagesName[1],
+                            style: TextStyle(
+                                fontSize: 15.sp,
+                                color: selectedtab == "Salon Details"
+                                    ? AppColor.pinkcolor
+                                    : Colors.grey,
+                                fontWeight: FontWeight.w600)),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        selectedindex == 1
+                            ? Container(
+                                height: 3.h,
+                                width: 95.w,
+                                color: AppColor.pinkcolor,
+                              )
+                            : Container()
+                      ],
                     ),
+                  ),
+                  SizedBox(
+                    width: 20.h,
                   ),
                   InkWell(
                     onTap: () {
@@ -76,13 +151,30 @@ class _AboutStudioState extends State<AboutStudio> {
                         selectedindex = 2;
                       });
                     },
-                    child: Text(
-                      pagesName[2],
-                      style: textStyle(
-                          12.sp,
-                          selectedtab == "Reviews" ? Colors.black : Colors.grey,
-                          "poppinbold"),
+                    child: Column(
+                      children: [
+                        Text(pagesName[2],
+                            style: TextStyle(
+                                fontSize: 15.sp,
+                                color: selectedtab == "Services"
+                                    ? AppColor.pinkcolor
+                                    : Colors.grey,
+                                fontWeight: FontWeight.w600)),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        selectedindex == 2
+                            ? Container(
+                                height: 3.h,
+                                width: 65.w,
+                                color: AppColor.pinkcolor,
+                              )
+                            : Container()
+                      ],
                     ),
+                  ),
+                  SizedBox(
+                    width: 20.h,
                   ),
                   InkWell(
                     onTap: () {
@@ -91,13 +183,62 @@ class _AboutStudioState extends State<AboutStudio> {
                         selectedindex = 3;
                       });
                     },
-                    child: Text(
-                      pagesName[3],
-                      style: textStyle(
-                          12.sp,
-                          selectedtab == "FAQs" ? Colors.black : Colors.grey,
-                          "poppinbold"),
+                    child: Column(
+                      children: [
+                        Text(pagesName[3],
+                            style: TextStyle(
+                                fontSize: 15.sp,
+                                color: selectedtab == "Experience"
+                                    ? AppColor.pinkcolor
+                                    : Colors.grey,
+                                fontWeight: FontWeight.w600)),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        selectedindex == 3
+                            ? Container(
+                                height: 3.h,
+                                width: 80.w,
+                                color: AppColor.pinkcolor,
+                              )
+                            : Container()
+                      ],
                     ),
+                  ),
+                  SizedBox(
+                    width: 20.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        selectedtab = pagesName[4];
+                        selectedindex = 4;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Text(pagesName[4],
+                            style: TextStyle(
+                                fontSize: 15.sp,
+                                color: selectedtab == "Reviews"
+                                    ? AppColor.pinkcolor
+                                    : Colors.grey,
+                                fontWeight: FontWeight.w600)),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        selectedindex == 4
+                            ? Container(
+                                height: 3.h,
+                                width: 65.w,
+                                color: AppColor.pinkcolor,
+                              )
+                            : Container(),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.h,
                   ),
                 ],
               ),
@@ -111,707 +252,370 @@ class _AboutStudioState extends State<AboutStudio> {
 }
 
 Widget about(BuildContext context) {
-  return SizedBox(
-    width: 370.w,
+  return Container(
+    width: 390.w,
+    color: Colors.white,
     child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           height: 20.h,
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              "assets/images/pinkcam.png",
+              height: 20.h,
+            ),
+            SizedBox(
+              width: 5.h,
+            ),
+            Text(
+              "Sal-One Video Consultation",
+              style: TextStyle(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black),
+            )
+          ],
+        ),
         SizedBox(
-          height: 100.h,
-          width: 369.w,
-          child: Row(
-            children: [
-              Image.asset(
-                "assets/images/salonPic.png",
-              ),
-              SizedBox(
-                width: 10.w,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+          height: 20.h,
+        ),
+        RichText(
+            text: TextSpan(children: [
+          TextSpan(
+              text: "Fee:",
+              style: TextStyle(fontSize: 20.sp, color: Colors.grey.shade400)),
+          TextSpan(
+              text: " Rs. 500",
+              style: TextStyle(
+                  fontSize: 20.sp,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500))
+        ])),
+        SizedBox(
+          height: 20.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              child: Row(
                 children: [
+                  Container(
+                    height: 10.h,
+                    width: 10.w,
+                    decoration: BoxDecoration(
+                        color: Colors.green.shade600, shape: BoxShape.circle),
+                  ),
+                  SizedBox(
+                    width: 5.w,
+                  ),
                   Text(
-                    "Glam Studio by Farial K.",
-                    style: textStyle(12.sp, Colors.black, "poppinbold"),
+                    "Available Today",
+                    style: TextStyle(color: Colors.green.shade600),
                   ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 220.w,
-                        height: 50.h,
-                        child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed o od tempor incididunt ut labore et dolore magna aliqua. Ut eni nim veniam, quis nostrud exercitation ullamco labos nisi ut ax ea commodo consequat. Duis aute irure dolor in rprerit in vol",
-                          style: textStyle(
-                              8.sp, AppColor.textfieldColor, "poppin"),
-                        ),
-                      ),
-                      InkWell(
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Dialog(
-                                    child: Container(
-                                      height: 365.h,
-                                      width: 335.w,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(4.r),
-                                          color: Colors.white),
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 20.h,
-                                            ),
-                                            Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Image.asset(
-                                                      "assets/images/pinkcam.png",
-                                                      height: 30.h),
-                                                  Text(
-                                                    "Online Video Consultation",
-                                                    style: textStyle(
-                                                        13.sp,
-                                                        Colors.black,
-                                                        "poppinsemi"),
-                                                  )
-                                                ]),
-                                            SizedBox(
-                                              height: 20.h,
-                                            ),
-                                            Container(
-                                                height: 37.h,
-                                                width: 270.w,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.r),
-                                                  color:
-                                                      AppColor.textfieldColor,
-                                                ),
-                                                child: TextFormField(
-                                                  decoration:
-                                                      const InputDecoration(
-                                                          focusedBorder:
-                                                              InputBorder.none,
-                                                          disabledBorder:
-                                                              InputBorder.none,
-                                                          enabledBorder:
-                                                              InputBorder.none,
-                                                          prefixIcon: Icon(
-                                                            Icons
-                                                                .perm_contact_cal_rounded,
-                                                          ),
-                                                          hintText:
-                                                              "GlamStudio by Farial k."),
-                                                  style:
-                                                      TextStyle(fontSize: 10.h),
-                                                )
-
-                                                // The list of options
-                                                ),
-                                            SizedBox(
-                                              height: 10.h,
-                                            ),
-                                            Container(
-                                                height: 37.h,
-                                                width: 270.w,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.r),
-                                                  color:
-                                                      AppColor.textfieldColor,
-                                                ),
-                                                child: TextFormField(
-                                                  decoration: const InputDecoration(
-                                                      focusedBorder:
-                                                          InputBorder.none,
-                                                      disabledBorder:
-                                                          InputBorder.none,
-                                                      enabledBorder:
-                                                          InputBorder.none,
-                                                      prefixIcon: Icon(
-                                                          Icons.person_pin),
-                                                      hintText: "Name"),
-                                                  style:
-                                                      TextStyle(fontSize: 10.h),
-                                                )
-
-                                                // The list of options
-                                                ),
-                                            SizedBox(height: 10.h),
-                                            Container(
-                                                height: 37.h,
-                                                width: 270.w,
-                                                color: AppColor.pinkcolor,
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 10.w,
-                                                    ),
-                                                    const Icon(
-                                                      Icons.alarm,
-                                                      color: Colors.white,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 10.w,
-                                                    ),
-                                                    Text(
-                                                      "Time",
-                                                      style: textStyle(
-                                                          10.sp,
-                                                          Colors.white,
-                                                          "poppin"),
-                                                    )
-                                                  ],
-                                                )),
-                                            Container(
-                                              height: 90.h,
-                                              width: 270.w,
-                                              color: AppColor.pinkLight,
-                                              child: Column(
-                                                children: [
-                                                  SizedBox(
-                                                    height: 5.h,
-                                                  ),
-                                                  Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceAround,
-                                                      children: [
-                                                        Icon(
-                                                          Icons.arrow_back_ios,
-                                                          size: 15.h,
-                                                          color: Colors.grey,
-                                                        ),
-                                                        Column(children: [
-                                                          Row(
-                                                            children: [
-                                                              Text(
-                                                                "Saturday,oct,21",
-                                                                style: textStyle(
-                                                                    8.sp,
-                                                                    Colors
-                                                                        .black54,
-                                                                    "poppin"),
-                                                              ),
-                                                              SizedBox(
-                                                                width: 5.h,
-                                                              ),
-                                                              Text(
-                                                                "Sunday,oct,21",
-                                                                style: textStyle(
-                                                                    8.sp,
-                                                                    Colors
-                                                                        .black54,
-                                                                    "poppin"),
-                                                              ),
-                                                              SizedBox(
-                                                                width: 5.h,
-                                                              ),
-                                                              Text(
-                                                                "Monday,oct,21",
-                                                                style: textStyle(
-                                                                    8.sp,
-                                                                    Colors
-                                                                        .black54,
-                                                                    "poppin"),
-                                                              )
-                                                            ],
-                                                          ),
-                                                          SizedBox(
-                                                            height: 5.h,
-                                                          ),
-                                                          Container(
-                                                            height: 2.h,
-                                                            width: 220.w,
-                                                            color: AppColor
-                                                                .textfieldColor,
-                                                          )
-                                                        ]),
-                                                        Icon(
-                                                          Icons
-                                                              .arrow_forward_ios,
-                                                          size: 15.h,
-                                                          color: Colors.grey,
-                                                        ),
-                                                      ]),
-                                                  SizedBox(
-                                                    height: 10.h,
-                                                  ),
-                                                  Row(children: [
-                                                    SizedBox(
-                                                      width: 5.h,
-                                                    ),
-                                                    Icon(
-                                                      Icons.wb_sunny,
-                                                      color: Colors.yellow[600],
-                                                      size: 15.h,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 2.h,
-                                                    ),
-                                                    Text(
-                                                      "Afternoon",
-                                                      style: textStyle(
-                                                          8.sp,
-                                                          Colors.black54,
-                                                          "poppin"),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 10.h,
-                                                    ),
-                                                    Container(
-                                                      height: 15.h,
-                                                      width: 40.w,
-                                                      child: Center(
-                                                        child: Text(
-                                                          "02:00pm",
-                                                          style: textStyle(
-                                                              7.sp,
-                                                              Colors.black54,
-                                                              "poppin"),
-                                                        ),
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                          border: Border.all(
-                                                              width: 1.w,
-                                                              color: Colors
-                                                                  .black54)),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 1.h,
-                                                    ),
-                                                    Container(
-                                                      height: 15.h,
-                                                      width: 40.w,
-                                                      child: Center(
-                                                        child: Text(
-                                                          "02:00pm",
-                                                          style: textStyle(
-                                                              7.sp,
-                                                              Colors.black54,
-                                                              "poppin"),
-                                                        ),
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                          border: Border.all(
-                                                              width: 1.w,
-                                                              color: Colors
-                                                                  .black54)),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 1.h,
-                                                    ),
-                                                    Container(
-                                                      height: 15.h,
-                                                      width: 40.w,
-                                                      child: Center(
-                                                        child: Text(
-                                                          "02:00pm",
-                                                          style: textStyle(
-                                                              7.sp,
-                                                              Colors.black54,
-                                                              "poppin"),
-                                                        ),
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                          border: Border.all(
-                                                              width: 1.w,
-                                                              color: Colors
-                                                                  .black54)),
-                                                    ),
-                                                  ]),
-                                                  SizedBox(
-                                                    height: 10.h,
-                                                  ),
-                                                  Row(children: [
-                                                    SizedBox(
-                                                      width: 5.h,
-                                                    ),
-                                                    Icon(
-                                                      Icons.brightness_4,
-                                                      color: Colors.red[900],
-                                                      size: 15.h,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 2.h,
-                                                    ),
-                                                    Text(
-                                                      "Evening",
-                                                      style: textStyle(
-                                                          8.sp,
-                                                          Colors.black54,
-                                                          "poppin"),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 17.h,
-                                                    ),
-                                                    Container(
-                                                      height: 15.h,
-                                                      width: 40.w,
-                                                      child: Center(
-                                                        child: Text(
-                                                          "02:00pm",
-                                                          style: textStyle(
-                                                              7.sp,
-                                                              Colors.black54,
-                                                              "poppin"),
-                                                        ),
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                          border: Border.all(
-                                                              width: 1.w,
-                                                              color: Colors
-                                                                  .black54)),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 1.h,
-                                                    ),
-                                                    Container(
-                                                      height: 15.h,
-                                                      width: 40.w,
-                                                      child: Center(
-                                                        child: Text(
-                                                          "02:00pm",
-                                                          style: textStyle(
-                                                              7.sp,
-                                                              Colors.black54,
-                                                              "poppin"),
-                                                        ),
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                          border: Border.all(
-                                                              width: 1.w,
-                                                              color: Colors
-                                                                  .black54)),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 1.h,
-                                                    ),
-                                                    Container(
-                                                      height: 15.h,
-                                                      width: 40.w,
-                                                      child: Center(
-                                                        child: Text(
-                                                          "02:00pm",
-                                                          style: textStyle(
-                                                              7.sp,
-                                                              Colors.black54,
-                                                              "poppin"),
-                                                        ),
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                          border: Border.all(
-                                                              width: 1.w,
-                                                              color: Colors
-                                                                  .black54)),
-                                                    ),
-                                                  ])
-                                                ],
-                                              ),
-                                            ),
-                                            SizedBox(height: 20.h),
-                                            InkWell(
-                                              onTap: () {
-                                                showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (BuildContext context) {
-                                                      return Dialog(
-                                                        child: Container(
-                                                          height: 365.h,
-                                                          width: 335.w,
-                                                          child: Column(
-                                                              children: [
-                                                                SizedBox(
-                                                                  height: 20.h,
-                                                                ),
-                                                                Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Image.asset(
-                                                                          "assets/images/pinkcam.png",
-                                                                          height:
-                                                                              30.h),
-                                                                      Text(
-                                                                        "Online Video Consultation",
-                                                                        style: textStyle(
-                                                                            13.sp,
-                                                                            Colors.black,
-                                                                            "poppinsemi"),
-                                                                      )
-                                                                    ]),
-                                                                SizedBox(
-                                                                  height: 10.h,
-                                                                ),
-                                                                Icon(
-                                                                    Icons
-                                                                        .priority_high,
-                                                                    size: 140.h,
-                                                                    color: Colors
-                                                                        .black),
-                                                                Container(
-                                                                  width: 240.w,
-                                                                  child: Text(
-                                                                      "Dear User! You are not subscribed to Online Video Consultation Offer. Please Subscribe to Enjoy Video Consultations with Dermatologists and Specialists"),
-                                                                ),
-                                                                SizedBox(
-                                                                  height: 20.h,
-                                                                ),
-                                                                Container(
-                                                                  height: 37.h,
-                                                                  width: 270.w,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: AppColor
-                                                                        .orangColor,
-                                                                  ),
-                                                                  child: Center(
-                                                                    child: Text(
-                                                                      "Subscribe Now",
-                                                                      style: textStyle(
-                                                                          14.sp,
-                                                                          Colors
-                                                                              .white,
-                                                                          "poppin"),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ]),
-                                                        ),
-                                                      );
-                                                    });
-                                              },
-                                              child: Container(
-                                                height: 37.h,
-                                                width: 270.w,
-                                                decoration: BoxDecoration(
-                                                  color: AppColor.orangColor,
-                                                ),
-                                                child: Center(
-                                                  child: Text(
-                                                    "Book Appointment",
-                                                    style: textStyle(14.sp,
-                                                        Colors.white, "poppin"),
-                                                  ),
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                });
-                          },
-                          child: Image.asset(
-                            "assets/images/cam.png",
-                            height: 17.h,
-                          ))
-                    ],
+                ],
+              ),
+            ),
+            SizedBox(
+              child:
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Column(
+                  children: [
+                    Text(
+                      "10:00 AM - 10:00 PM",
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    Text(
+                      "10:00 AM - 10:00 PM",
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                const Icon(
+                  Icons.arrow_drop_down,
+                  color: Colors.black,
+                )
+              ]),
+            )
+          ],
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 40.h,
+              width: 360.w,
+              decoration: BoxDecoration(
+                  color: AppColor.pinkcolor,
+                  borderRadius: BorderRadius.circular(5.r)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/images/pinkcam.png",
+                    height: 10.h,
+                    color: Colors.white,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "Wait Time",
-                            style: textStyle(
-                                8.sp, AppColor.pinkcolor, "poppinbold"),
-                          ),
-                          Text(
-                            "Under 15 mints",
-                            style: textStyle(7.sp, Colors.black, "poppinbold"),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        width: 5.w,
-                      ),
-                      Container(
-                        height: 20.h,
-                        width: 1.w,
-                        color: AppColor.textfieldColor,
-                      ),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            "Experience",
-                            style: textStyle(
-                                8.sp, AppColor.pinkcolor, "poppinbold"),
-                          ),
-                          Text(
-                            "31 uears",
-                            style: textStyle(7.sp, Colors.black, "poppinbold"),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      Container(
-                        height: 20.h,
-                        width: 1.w,
-                        color: AppColor.textfieldColor,
-                      ),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            "Satisfied Clients",
-                            style: textStyle(
-                                8.sp, AppColor.pinkcolor, "poppinbold"),
-                          ),
-                          Text(
-                            "96% postitive",
-                            style: textStyle(7.sp, Colors.black, "poppinbold"),
-                          )
-                        ],
-                      ),
-                    ],
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  Text(
+                    "Book Video Consultation",
+                    style: TextStyle(
+                        fontSize: 15.sp,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500),
                   )
                 ],
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Container(
+          height: 10.h,
+          width: double.infinity,
+          color: Colors.grey.shade100,
+        ),
+        SizedBox(
+          height: 15.h,
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 10.w),
+          child: Row(
+            children: [
+              Icon(
+                Icons.star,
+                color: Colors.black,
+                size: 18.h,
+              ),
+              SizedBox(
+                width: 8.w,
+              ),
+              Text(
+                "Reviews",
+                style: TextStyle(
+                    fontSize: 18.sp,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500),
               )
             ],
           ),
         ),
         SizedBox(
-          height: 25.h,
+          height: 15.h,
+        ),
+        Container(
+          height: 1.h,
+          width: double.infinity,
+          color: Colors.grey.shade100,
+        ),
+        SizedBox(
+          height: 15.h,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              height: 45.h,
-              width: 45.w,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.black,
-              ),
-              child: Center(
-                child: Text(
-                  "96%",
-                  style: textStyle(10.sp, Colors.white, "poppin"),
+            Column(
+              children: [
+                Container(
+                  height: 50.h,
+                  width: 50.w,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.black),
+                  child: Center(
+                    child: Text(
+                      "92%",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.sp,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(
-              width: 5.w,
+                SizedBox(
+                  height: 5.h,
+                ),
+                Container(
+                  height: 50.h,
+                  width: 115.w,
+                  child: Text(
+                    "Satisfied out of 144",
+                    style: TextStyle(fontSize: 15.sp, color: Colors.black),
+                  ),
+                )
+              ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Clients Reviews:",
-                  style: textStyle(12.sp, Colors.black, "poppinbold"),
+                  "Services",
+                  style:
+                      TextStyle(fontSize: 16.sp, color: Colors.grey.shade500),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Row(
+                  children: [
+                    Container(
+                        height: 3.h,
+                        width: 140.w,
+                        color: Colors.grey.shade200,
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 3.h,
+                              width: 120.w,
+                              color: Colors.black,
+                            ),
+                          ],
+                        )),
+                    SizedBox(
+                      width: 5.h,
+                    ),
+                    Text(
+                      "92%",
+                      style: TextStyle(fontSize: 16.sp, color: Colors.black),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 12.h,
                 ),
                 Text(
-                  "Satisfied Out of 379 Clients",
-                  style: textStyle(10.sp, Colors.black, "poppin"),
+                  "Environment",
+                  style:
+                      TextStyle(fontSize: 16.sp, color: Colors.grey.shade500),
                 ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Row(
+                  children: [
+                    Container(
+                        height: 3.h,
+                        width: 140.w,
+                        color: Colors.grey.shade200,
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 3.h,
+                              width: 120.w,
+                              color: Colors.black,
+                            ),
+                          ],
+                        )),
+                    SizedBox(
+                      width: 5.h,
+                    ),
+                    Text(
+                      "92%",
+                      style: TextStyle(fontSize: 16.sp, color: Colors.black),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 12.h,
+                ),
+                Text(
+                  "Staff Behaviour",
+                  style:
+                      TextStyle(fontSize: 16.sp, color: Colors.grey.shade500),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Row(
+                  children: [
+                    Container(
+                        height: 3.h,
+                        width: 140.w,
+                        color: Colors.grey.shade200,
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 3.h,
+                              width: 120.w,
+                              color: Colors.black,
+                            ),
+                          ],
+                        )),
+                    SizedBox(
+                      width: 5.h,
+                    ),
+                    Text(
+                      "92%",
+                      style: TextStyle(fontSize: 16.sp, color: Colors.black),
+                    )
+                  ],
+                )
               ],
             )
           ],
         ),
         SizedBox(
-          height: 30.h,
+          height: 20.h,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text(
-              "Services",
-              style: textStyle(12.sp, Colors.black, "poppinbold"),
-            ),
-            SizedBox(
-              width: 100.w,
+            Container(
+              height: 40.h,
+              width: 150.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.r),
+                color: AppColor.pinkcolor,
+              ),
+              child: Center(
+                child: Text(
+                  "Connect Now",
+                  style: TextStyle(
+                      fontSize: 15.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
             ),
             Container(
-              height: 4.h,
-              width: 129.w,
+              height: 40.h,
+              width: 150.h,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4.r),
-                  color: Colors.black),
+                borderRadius: BorderRadius.circular(5.r),
+                color: AppColor.orangColor,
+              ),
+              child: Center(
+                child: Text(
+                  "Book Appoint...",
+                  style: TextStyle(
+                      fontSize: 15.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
             ),
-            Text(
-              "92%",
-              style: textStyle(12.sp, Colors.black, "poppinbold"),
-            )
           ],
-        ),
-        Row(
-          children: [
-            Text(
-              "Salon Environment",
-              style: textStyle(12.sp, Colors.black, "poppinbold"),
-            ),
-            SizedBox(
-              width: 25.w,
-            ),
-            Container(
-              height: 4.h,
-              width: 129.w,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4.r),
-                  color: Colors.black),
-            ),
-            Text(
-              "92%",
-              style: textStyle(12.sp, Colors.black, "poppinbold"),
-            )
-          ],
-        ),
-        Row(
-          children: [
-            Text(
-              "Staff Behaviour",
-              style: textStyle(12.sp, Colors.black, "poppinbold"),
-            ),
-            SizedBox(
-              width: 50.w,
-            ),
-            Container(
-              height: 4.h,
-              width: 129.w,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4.r),
-                  color: Colors.black),
-            ),
-            Text(
-              "92%",
-              style: textStyle(12.sp, Colors.black, "poppinbold"),
-            )
-          ],
-        ),
-        SizedBox(
-          height: 40.h,
-        ),
-        Container(
-          height: 40.h,
-          width: 220.w,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(3.r),
-              color: AppColor.pinkcolor),
-          child: Center(
-            child: Text(
-              "Book Appointment",
-              style: textStyle(15.sp, Colors.white, "poppinbold"),
-            ),
-          ),
         )
       ],
     ),
@@ -822,207 +626,8 @@ Widget services() {
   return Container(
     height: double.infinity,
     width: double.infinity,
-    color: const Color(0xffFFF2F4),
     child: Center(
-      child: Column(children: [
-        Align(
-          alignment: Alignment.topLeft,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 5, left: 10),
-            child: Text(
-              "Glam Studio - Services",
-              style: textStyle(13.sp, Colors.black, "poppinbold"),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        Container(
-          height: 236.h,
-          width: 344.w,
-          color: Colors.white,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 10.h,
-              ),
-              Image.asset(
-                "assets/images/skincare.png",
-                height: 110.h,
-              ),
-              Text(
-                "Skincare",
-                style: textStyle(16.sp, AppColor.pinkcolor, "poppinbold"),
-              ),
-              SizedBox(
-                height: 39.h,
-                width: 280.w,
-                child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m agna aliqua. Ut enim ad minim veniam, quis",
-                  style: textStyle(9.sp, Colors.black, "poppin"),
-                ),
-              ),
-              SizedBox(height: 15.h),
-              Container(
-                height: 22.h,
-                width: 112.w,
-                color: AppColor.orangColor,
-                child: Center(
-                  child: Text(
-                    "Book Appointment",
-                    style: textStyle(9.sp, Colors.white, "poppinbold"),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              height: 144.h,
-              width: 94.w,
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/servicemakeup.png"),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Text(
-                    "Makeup",
-                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Container(
-                    height: 15.h,
-                    width: 42.w,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2.r),
-                        color: AppColor.orangColor),
-                    child: Center(
-                      child: Text(
-                        "View",
-                        style: textStyle(9.sp, Colors.white, "poppinbold"),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              height: 144.h,
-              width: 94.w,
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/hair.png"),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Text(
-                    "Hair Affair",
-                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Container(
-                    height: 15.h,
-                    width: 42.w,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2.r),
-                        color: AppColor.orangColor),
-                    child: Center(
-                      child: Text(
-                        "View",
-                        style: textStyle(9.sp, Colors.white, "poppinbold"),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              height: 144.h,
-              width: 94.w,
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/pedicare.png"),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Text(
-                    "Mani/Pedi",
-                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Container(
-                    height: 15.h,
-                    width: 42.w,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2.r),
-                        color: AppColor.orangColor),
-                    child: Center(
-                      child: Text(
-                        "View",
-                        style: textStyle(9.sp, Colors.white, "poppinbold"),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              height: 144.h,
-              width: 94.w,
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/tattoo.png"),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Text(
-                    "Lash/Tattoo",
-                    style: textStyle(11.sp, AppColor.pinkcolor, "poppinbold"),
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Container(
-                    height: 15.h,
-                    width: 42.w,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2.r),
-                        color: AppColor.orangColor),
-                    child: Center(
-                      child: Text(
-                        "View",
-                        style: textStyle(9.sp, Colors.white, "poppinbold"),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
-        )
-      ]),
+      child: Text("Under work"),
     ),
   );
 }
@@ -1031,197 +636,7 @@ Widget review() {
   return SizedBox(
     height: double.infinity,
     width: double.infinity,
-    child: Center(
-        child: Column(children: [
-      Align(
-        alignment: Alignment.topLeft,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 5, left: 10),
-          child: Text(
-            "Glam Studio - Reviews",
-            style: textStyle(13.sp, Colors.black, "poppinbold"),
-          ),
-        ),
-      ),
-      SizedBox(
-        height: 10.h,
-      ),
-      Container(
-        width: 255.w,
-        height: 28.h,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.r), color: Colors.grey[200]),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 12),
-          child: Row(
-            children: [
-              Icon(
-                Icons.star,
-                color: Colors.yellow[600],
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.yellow[600],
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.yellow[600],
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.yellow[600],
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.yellow[600],
-              ),
-              SizedBox(
-                width: 20.w,
-              ),
-              Text("4.7 out of 5",
-                  style: textStyle(12.sp, Colors.black, "poppin"))
-            ],
-          ),
-        ),
-      ),
-      Text(
-        "379 Customers Ratings and Reviews",
-        style: textStyle(11.sp, Colors.black, "poppin"),
-      ),
-      SizedBox(height: 10.h),
-      customerReviewChart("5 Stars", "84%", 180),
-      SizedBox(height: 5.h),
-      customerReviewChart("4 Stars", "19%", 120),
-      SizedBox(height: 5.h),
-      customerReviewChart("3 Stars", "18%", 100),
-      SizedBox(height: 5.h),
-      customerReviewChart("2 Stars", "15%", 90),
-      SizedBox(
-        height: 60.h,
-      ),
-      SizedBox(
-        height: 90.h,
-        width: 358.w,
-        child: Column(
-          children: [
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text(
-                "Best Services",
-                style: textStyle(14.sp, Colors.black, "poppinbold"),
-              ),
-              Text("15 April,2021",
-                  style: textStyle(14.sp, Colors.black, "poppinbold"))
-            ]),
-            SizedBox(
-                height: 50.h,
-                width: 358.w,
-                child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed o od tempor incididunt ut labore et dolore magna aliqua. Ut eni nim veniam, quis nostrud exercitation ullamco labos nisi ut ax ea commodo consequat. Duis aute irure dolor in rprerit in vol",
-                  style: textStyle(10.sp, Colors.black54, "poppin"),
-                )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text("-Ali Khan",
-                    style: textStyle(10.sp, Colors.black, "poppinbold"))
-              ],
-            )
-          ],
-        ),
-      ),
-      SizedBox(
-        height: 30.h,
-      ),
-      SizedBox(
-        height: 90.h,
-        width: 358.w,
-        child: Column(
-          children: [
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text(
-                "Best Services",
-                style: textStyle(14.sp, Colors.black, "poppinbold"),
-              ),
-              Text("15 April,2021",
-                  style: textStyle(14.sp, Colors.black, "poppinbold"))
-            ]),
-            SizedBox(
-                height: 50.h,
-                width: 358.w,
-                child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed o od tempor incididunt ut labore et dolore magna aliqua. Ut eni nim veniam, quis nostrud exercitation ullamco labos nisi ut ax ea commodo consequat. Duis aute irure dolor in rprerit in vol",
-                  style: textStyle(10.sp, Colors.black54, "poppin"),
-                )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text("-Ali Khan",
-                    style: textStyle(10.sp, Colors.black, "poppinbold"))
-              ],
-            )
-          ],
-        ),
-      ),
-      SizedBox(
-        height: 30.h,
-      ),
-      SizedBox(
-        height: 90.h,
-        width: 358.w,
-        child: Column(
-          children: [
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text(
-                "Best Services",
-                style: textStyle(14.sp, Colors.black, "poppinbold"),
-              ),
-              Text("15 April,2021",
-                  style: textStyle(14.sp, Colors.black, "poppinbold"))
-            ]),
-            SizedBox(
-                height: 50.h,
-                width: 358.w,
-                child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed o od tempor incididunt ut labore et dolore magna aliqua. Ut eni nim veniam, quis nostrud exercitation ullamco labos nisi ut ax ea commodo consequat. Duis aute irure dolor in rprerit in vol",
-                  style: textStyle(10.sp, Colors.black54, "poppin"),
-                )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text("-Ali Khan",
-                    style: textStyle(10.sp, Colors.black, "poppinbold"))
-              ],
-            )
-          ],
-        ),
-      ),
-      SizedBox(
-        height: 20.h,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            children: [
-              Container(
-                height: 30.h,
-                width: 30.w,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.black,
-                ),
-                child: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.white,
-                ),
-              ),
-              Text("Load More",
-                  style: textStyle(12.sp, Colors.black, "poppinbold"))
-            ],
-          )
-        ],
-      )
-    ])),
+    child: Center(child: Text("Under work")),
   );
 }
 
@@ -1229,207 +644,15 @@ Widget faqs() {
   return SizedBox(
     height: double.infinity,
     width: double.infinity,
-    child: Center(
-      child: Column(
-        children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 5, left: 10),
-              child: Text(
-                "Glam Studio - FAQs",
-                style: textStyle(13.sp, Colors.black, "poppinbold"),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 30.h,
-          ),
-          Image.asset(
-            "assets/images/logo.png",
-            height: 50.h,
-          ),
-          Text(
-            "Ask Your Question!",
-            style: textStyle(13.sp, Colors.black, "poppinbold"),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          Container(
-            width: 305.w,
-            height: 33.h,
-            decoration: BoxDecoration(
-                color: AppColor.orangColor,
-                borderRadius: BorderRadius.circular(1.r)),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Row(children: [
-                const Icon(
-                  Icons.search,
-                  color: Colors.white,
-                ),
-                Text("What else you want to know about this salon?",
-                    style: textStyle(9.sp, Colors.white, "poppinbold"))
-              ]),
-            ),
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 5, left: 10),
-              child: Text(
-                "Frequently Asked Questions:",
-                style: textStyle(13.sp, Colors.black, "poppinbold"),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          SizedBox(
-            width: 350.w,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipi,",
-                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
-                    ),
-                    const Icon(Icons.arrow_drop_down, color: Colors.black)
-                  ],
-                ),
-                Container(
-                  height: 1.h,
-                  width: 350.w,
-                  color: Colors.grey[300],
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          SizedBox(
-            width: 350.w,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipi,",
-                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
-                    ),
-                    const Icon(Icons.arrow_drop_down, color: Colors.black)
-                  ],
-                ),
-                Container(
-                  height: 1.h,
-                  width: 350.w,
-                  color: Colors.grey[300],
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          SizedBox(
-            width: 350.w,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipi,",
-                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
-                    ),
-                    const Icon(Icons.arrow_drop_down, color: Colors.black)
-                  ],
-                ),
-                Container(
-                  height: 1.h,
-                  width: 350.w,
-                  color: Colors.grey[300],
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          SizedBox(
-            width: 350.w,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipi,",
-                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
-                    ),
-                    const Icon(Icons.arrow_drop_down, color: Colors.black)
-                  ],
-                ),
-                Container(
-                  height: 1.h,
-                  width: 350.w,
-                  color: Colors.grey[300],
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          SizedBox(
-            width: 350.w,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipi,",
-                      style: textStyle(12.sp, Colors.grey.shade400, "poppin"),
-                    ),
-                    const Icon(Icons.arrow_drop_down, color: Colors.black)
-                  ],
-                ),
-                Container(
-                  height: 1.h,
-                  width: 350.w,
-                  color: Colors.grey[300],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 15.h,
-          ),
-          Container(
-            height: 30.h,
-            width: 30.w,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.black,
-            ),
-            child: const Icon(
-              Icons.arrow_drop_down,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-    ),
+    child: Center(child: Text("Under work")),
+  );
+}
+
+Widget reviews() {
+  return Container(
+    height: double.infinity,
+    width: double.infinity,
+    child: Center(child: Text("Under work")),
   );
 }
 

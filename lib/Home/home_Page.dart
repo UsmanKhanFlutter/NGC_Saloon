@@ -433,6 +433,7 @@ class _HomePageState extends State<HomePage> {
                               border: Border.all(color: Colors.black26)),
                           child: TextField(
                             decoration: InputDecoration(
+                                contentPadding:const EdgeInsets.all(8),
                                 prefixIcon:
                                     Icon(Icons.search, color: Colors.black38),
                                 enabledBorder: InputBorder.none,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:saloon/Home/salons_in_current_area.dart';
 import 'package:saloon/globals/colors.dart';
 import 'package:saloon/globals/ui_widget.dart';
 
@@ -112,7 +113,14 @@ class _FindSalonState extends State<FindSalon> {
                   ),
                 ),
                 SizedBox(height: 10.h),
-                specialityContainer("Facial"),
+                InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SalonInArea()));
+                    },
+                    child: specialityContainer("Facial")),
                 specialityContainer("Hands"),
                 specialityContainer("Hair"),
                 specialityContainer("hair"),

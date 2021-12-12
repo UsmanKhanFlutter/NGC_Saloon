@@ -281,18 +281,21 @@ class _TimeSlotState extends State<TimeSlot> {
           SizedBox(height: 20.h),
           Row(
             children: [
-              Container(
-                height: 30.h,
-                width: 80.w,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                    border: Border.all(color: Colors.black26)),
-                child: Center(
-                    child: Text(
-                  "04:50 PM",
-                  style:
-                      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
-                )),
+              Padding(
+                padding: EdgeInsets.only(left: 10.w),
+                child: Container(
+                  height: 30.h,
+                  width: 80.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(color: Colors.black26)),
+                  child: Center(
+                      child: Text(
+                    "04:50 PM",
+                    style:
+                        TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
+                  )),
+                ),
               ),
             ],
           ),
@@ -319,7 +322,7 @@ class _TimeSlotState extends State<TimeSlot> {
           SizedBox(
             height: 20.h,
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
             Container(
               height: 30.h,
               width: 80.w,
